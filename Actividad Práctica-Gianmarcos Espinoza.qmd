@@ -107,17 +107,41 @@ Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-int
 
 **Día 5: diverging** 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day05-Diverging/Diverging.png?raw=true)
+```{r, echo=FALSE}
+#| message: false
+#| warning: false
 
-**Audiencia:**  Esta visualización está dirigida a funcionarios de salud pública, epidemiólogos, autoridades locales y cualquier persona interesada en monitorear la incidencia del dengue en base al sexo por Provincia según la región Piura - Perú.
+datos_ventas <- read.csv("https://raw.githubusercontent.com/Gianmarcos97/30daychartchallenge/main/Day05-diverging/ventas.csv", sep = ",", quote = "")
+colnames(datos_ventas) <- c("fecha", "ventas", "objetivo_ventas")
 
-**Objetivo:** El propósito de esta representación visual es mostrar el total del porcentaje de personas afectadas según su sexo por el dengue, de la región de Piura en el primer semestre del año 2023.
+# Convertir la columna de fecha a formato de fecha
+datos_ventas$fecha <- as.Date(datos_ventas$fecha, format = "%Y-%m-%d")
 
-**Mensaje:**  El gráfico de barras 100% apiladas presenta el porcentaje de personas con dengue en la región de Piura, Perú, durante el período de enero de 2023 a mayo de 2023.  Se utiliza un esquema de color divergente para resaltar las variaciones en la incidencia del dengue en la Región Piura, logrando visualizar que en la provincia de Huancabamba y Ayabaca, la mayoría de infectados fueron hombres, el resto de provincia fue bastante equitativo.
+# Crear el gráfico de líneas
+ggplot(datos_ventas, aes(x = fecha, y = ventas, color = "Ventas reales")) +
+  geom_line(size = 1.5) +
+  geom_line(aes(y = objetivo_ventas, color = "Objetivo de ventas"), linetype = "dashed", size = 1) +
+  labs(x = "Fecha",
+       y = "Ventas",
+       color = "Tipo") +
+  ggtitle("Divergencia entre ventas reales y objetivo de ventas en el mes de mayo") +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.title = element_text(hjust = 0.5, face = "bold")) +
+  scale_color_manual(values = c("blue", "red")) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%d-%m")
 
-**Motivo elección herramienta:** Se optó por utilizar un gráfico de barras 100% apiladas en Power BI debido a su capacidad para mostrar la distribución proporcional de los datos. 
+```
 
-Fuente: Gobierno Regional de Piura     - https://www.datosabiertos.gob.pe/dataset/casos-de-dengue-en-la-regi%C3%B3n-piura-gobierno-regional-piura
+Fuente: Tai Loy
+
+**Audiencia:**  La audiencia para este gráfico de líneas sería el equipo de marketing y cualquier persona involucrada en la gestión y seguimiento de objetivos de ventas en la empresa. También podría ser útil para los altos directivos y accionistas interesados en el desempeño financiero de la compañía.
+
+**Objetivo:** El objetivo principal de esta representación es proporcionar una visualización clara y comparativa de las ventas reales en relación con el objetivo de ventas establecido para el mes de mayo de 2023. Esto puede ayudar a evaluar el desempeño de ventas, identificar desviaciones con respecto a los objetivos y tomar medidas correctivas si es necesario para alcanzar las metas establecidas.
+
+**Mensaje:**  El gráfico de líneas muestra la evolución de las ventas reales y el objetivo de ventas a lo largo del mes de mayo de 2023. Al comparar las dos líneas, se puede identificar fácilmente si las ventas están por encima o por debajo del objetivo en cada momento del mes. Esto puede ayudar a identificar tendencias, patrones estacionales o áreas de oportunidad para mejorar el desempeño de ventas en el futuro.
+
+**Motivo elección herramienta:** Se optó por utilizar un gráfico de líneas en R (ggplot) para este análisis debido a su capacidad para visualizar tendencias y comparar valores a lo largo del tiempo de manera clara y efectiva. 
 
 
 ```
@@ -126,19 +150,20 @@ Fuente: Gobierno Regional de Piura     - https://www.datosabiertos.gob.pe/datase
 **Día 6: OECD** 
 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day06-OECD/OECD.png?raw=true)
-
-**Audiencia:**  Esta visualización está dirigida a demógrafos, investigadores sociales y cualquier persona interesada en comprender la evolución de la distribución de la población por edad en Australia a lo largo del tiempo.
-
-**Objetivo:**  El propósito de esta representación visual es mostrar la evolución de la distribución de la población por edad en Australia durante los años 2012, 2017 y 2022 (mostrando evolución cada 5 años), destacando los cambios demográficos y las tendencias en la estructura de edad de la población.
-
-**Mensaje:**   El gráfico de líneas presenta la estimación de la población por edad en Australia para los años 2012, 2017 y 2022. Cada línea representa el año, siendo 3 líneas 2012, 2017 y 2022, enfocado a una cohorte de edad específica y muestra cómo ha variado su tamaño a lo largo del tiempo. Se observa un aumento en la población en las cohortes de edad en rango "30 a 34 años", habiando en 2012 un total de 1.59 mill., 2017 un total de 1.83 mill y en 2022 un total de 1.91 mill., entre otros detalles que se puede comprender según la gráfica.
-
-
-**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas en Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la distribución de la población por edad en diferentes años y resaltar las tendencias demográficas clave en Australia a lo largo del período analizado.
-
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day06-OECD/poblaci%C3%B3n%20en%20Italia%20por%20edad.png?raw=true)
 
 Fuente: OECD https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%2523SOC%2523%7CDemography%2523SOC_DEM%2523&pg=0&fc=Topic&bp=true&snb=2&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_POPULATION%40DF_POP_HIST&df[ag]=OECD.ELS.SAE&df[vs]=1.0&pd=2010%2C2022&dq=AUS..PS._T..&ly[rw]=AGE&ly[cl]=TIME_PERIOD&to[TIME_PERIOD]=false
+
+
+**Audiencia:**  La audiencia para este gráfico de líneas podría incluir demógrafos y cualquier persona interesada en comprender la estructura de la población en Italia y cómo ha evolucionado con el tiempo.
+
+**Objetivo:**  El objetivo principal de esta representación es comparar la distribución de la población por edad en Italia entre los años 2015 y 2020. Esto puede ayudar a identificar cambios en la estructura demográfica, como el envejecimiento de la población o el impacto de factores como la migración y las tendencias de natalidad.
+
+**Mensaje:**   El gráfico de líneas muestra dos líneas: una línea celeste que representa la distribución de la población por edad en Italia en el año 2015, y una línea azul que representa la distribución en el año 2020. Al observar las dos líneas, se pueden identificar patrones de cambio en la distribución por edad a lo largo de ese período de tiempo, lo que puede tener implicaciones significativas en áreas como la política social, la salud pública y la economía.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas para este análisis debido a su capacidad para visualizar tendencias y comparar valores a lo largo del tiempo de manera clara y efectiva. 
+
 
 
 ```
