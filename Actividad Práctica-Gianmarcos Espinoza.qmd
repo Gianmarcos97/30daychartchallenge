@@ -51,7 +51,7 @@ Fuente: mecd  https://estadisticas.mecd.gob.es/DeporteJaxiPx/Tabla.htm?path=/d12
 ```
 **Día 2: neo** 
 
-![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day01-PartToWhole/deportes%20más%20prácticados.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day02-neo/neo.png?raw=true)
 
 Fuente: Gobierno Regional de Piura     https://www.datosabiertos.gob.pe/dataset/casos-de-dengue-en-la-regi%C3%B3n-piura-gobierno-regional-piura
 
@@ -70,17 +70,18 @@ Fuente: Gobierno Regional de Piura     https://www.datosabiertos.gob.pe/dataset/
 
 **Día 3: makeover** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day03-%20Makeover/Makeover-actividad1.png?raw=true){ width=120% height=120% }
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day03-makeover/matriz%20de%20correlacion%20dengai.png?raw=true){ width=140% height=130% }
 
-**Audiencia:**  Este gráfico está dirigido a responsables políticos, científicos ambientales, empresas y ciudadanos interesados en comprender el panorama de las emisiones de CO2 a nivel global. Adicional, a las personas interesadas en cómo mejorar una gráfica, teniendo la posibilidad de generar una mejor visualización de datos.
+Fuente: DrivenData - https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/
 
-**Objetivo:** El objetivo de esta visualización es proporcionar una representación clara y concisa del total de toneladas métricas de emisiones de CO2 en el año 2021.
+**Audiencia:**  Este gráfico está dirigido a personas interesadas en el evento DengAI, personas que buscan comprender las correlaciones del dataset de train con el fin de hacer el análisis respectivo en la etapa de preprocesamiento de datos.
 
-**Mensaje:**  El gráfico de barras vertical muestra el total de toneladas métricas de emisiones de CO2 en el año 2021, con cada barra representando la cantidad de emisiones generadas por país. Logrando una mejor visualización en comparación con el diagrama circular.
+**Objetivo:** El objetivo de esta visualización es realizar una matriz de correlación que sea capaz de ayudar a identificar visualmente las variables que tienen una correlación muy alta para evitar multicolienalidad de datos.
 
-**Motivo elección herramienta:** Se optó por representar estos datos utilizando un gráfico de barras vertical debido a su capacidad para visualizar de manera efectiva las diferencias en las cantidades de emisiones de CO2 entre países. Este enfoque permite una fácil comparación de las contribuciones relativas de cada entidad a la contaminación atmosférica, lo que facilita la identificación de áreas prioritarias para la acción climática y la toma de decisiones informadas. Adicional, fue desarrollado en GoogleSheet mediante un gráfico de barras vertical.
+**Mensaje:**  La matriz de correlación ayuda a identificar las correlaciones de las variables, proporciona una visión general de cómo están relacionadas las variables en un conjunto de datos, mostrando la fuerza y la dirección de estas relaciones. Ayuda a identificar patrones, dependencias y posibles multicolinealidades entre las variables, lo que puede guiar análisis posteriores y la toma de decisiones en diversos campos como en proyectos de ciencia de datos machine learning.
 
-Fuente: Datosmacro - https://datosmacro.expansion.com/energia-y-medio-ambiente/emisiones-co2?anio=2021
+**Motivo elección herramienta:** Se optó por realizar una mejora en la matriz de correlación existente ya que no ayudaba mucho visualmente, al realizarlo en python (matplotlib y seaborn) ayudó mostrando sus valores en la matriz, cambiar de color y ajustar el eje "x" para una mejor visualización, y para ello las librerias mencionadas de Python fueron las más ideales para ello.
+
 
 
 ```
