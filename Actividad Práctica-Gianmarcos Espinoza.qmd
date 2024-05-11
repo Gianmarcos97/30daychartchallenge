@@ -399,20 +399,17 @@ Fuente: kaggle  https://www.kaggle.com/datasets/guillemservera/precious-metals-d
 
 **Día 16: weather** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day16-weather/emisiones%20c02.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day16-weather/%C3%ADndice%20de%20vegetaci%C3%B3n%20sureste%20y%20noreste.png?raw=true)
 
-**Gráfico Interactivo:** https://datawrapper.dwcdn.net/rZ9An/1/
+Fuente: DrivenData - https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/
 
-**Audiencia:**  Esta visualización está dirigida a ambientalistas, responsables políticos, científicos del clima y cualquier persona interesada en comprender las emisiones de CO2.
+**Audiencia:**  La audiencia para esta gráfica de líneas podría incluir epidemiólogos, investigadores en salud pública, autoridades locales, científicos ambientales y cualquier persona interesada en comprender la relación entre el índice de vegetación y la incidencia del dengue en diferentes regiones geográficas.
 
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa el total de toneladas métricas de emisiones de CO2 en el año 2021, destacando los países emisores y su efecto al cambio climático.
+**Objetivo:**El objetivo principal de esta representación es visualizar y comparar la relación entre el índice de vegetación de diferencia normalizada (NDVI) en el sureste y el noreste en relación con la incidencia del dengue, utilizando datos de Dengue Driven Data. Esto puede ayudar a identificar posibles correlaciones entre la vegetación y la propagación del dengue en diferentes áreas geográficas durante el período de 2000 al 2006.
 
-**Mensaje:**  El gráfico de barras vertical presenta el total de toneladas métricas de emisiones de CO2 en 2021. Cada barra representa un país y su altura en el eje vertical indica la cantidad de emisiones de CO2 en toneladas métricas. Se observa que países como China y Estados Unidos son los principales emisores de CO2. Esta representación destaca la magnitud del desafío en la reducción de las emisiones de gases de efecto invernadero y subraya la necesidad de acciones concertadas a nivel internacional para abordar el cambio climático.
+**Mensaje:**  El gráfico de líneas muestra dos líneas: una línea celeste que representa el índice de vegetación de diferencia normalizada (NDVI) en el sureste y otra línea azul que representa el NDVI en el noreste. Al observar el gráfico, se puede analizar la tendencia y la relación entre ambos índices de vegetación durante el período de 2000 al 2006.
 
-**Motivo elección herramienta:** Se optó por utilizar un gráfico de barras vertical en Datawrapper debido a su capacidad para visualizar de manera efectiva las diferencias en las cantidades de emisiones de CO2 entre los diferentes países. Esta herramienta permite identificar rápidamente los principales emisores de CO2 y proporciona información valiosa para la formulación de políticas y la toma de decisiones relacionadas con la mitigación del cambio climático.
-
-Fuente: Datosmacro - https://datosmacro.expansion.com/energia-y-medio-ambiente/emisiones-co2?anio=2021
-
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear esta gráfica de líneas debido a su capacidad para generar visualizaciones de datos interactivas y dinámicas. Power BI permite conectar múltiples fuentes de datos, realizar análisis avanzados y crear informes personalizados que pueden ser compartidos y explorados por diferentes usuarios. Además, el gráfico de líneas es una opción efectiva para representar la relación entre dos variables numéricas a lo largo del tiempo de manera clara y comprensible.
 
 ```
 ```
