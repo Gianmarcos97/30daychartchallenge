@@ -318,24 +318,23 @@ Herramienta: Lenguaje R
 ```
 ```
 
-## Comparisons: Day 13-18
+## Relationships: Day 13-18
 
 **Día 13: family** 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day13-Family/Day13.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day13-Family/family.png?raw=true)
+
+Fuente: Kaggle  https://www.kaggle.com/datasets/iamsouravbanerjee/family-guy-dataset
+
+**Audiencia:**   La audiencia para este diagrama de líneas podría incluir analistas de televisión y cualquier persona interesada en comprender la relación entre el rating y la audiencia de un programa de televisión popular como Family Guy.
+
+**Objetivo:**  El objetivo principal de esta representación es visualizar y analizar la relación entre el rating promedio y el total de televidentes estadounidenses (por millón) de las primeras seis temporadas de Family Guy. Esto puede ayudar a entender cómo ha evolucionado la popularidad del programa a lo largo del tiempo y cómo se relaciona la audiencia con el rating promedio.
+
+**Mensaje:** El diagrama de líneas muestra dos líneas: una línea celeste que representa el total de televidentes estadounidenses (por millón) y una línea azul que representa el rating promedio para cada temporada de Family Guy. Al observar el diagrama, se puede identificar la relación entre la audiencia y el rating promedio a lo largo de las primeras seis temporadas del programa. 
 
 
-**Audiencia:**   Esta visualización está dirigida a cualquier persona interesada en comprender la evolución de los divorcios en España a lo largo del tiempo.
+**Motivo elección herramienta:**  Se optó por utilizar Power BI para crear este diagrama de líneas debido a su capacidad para generar visualizaciones de datos interactivas y dinámicas. Power BI permite conectar múltiples fuentes de datos, realizar análisis avanzados y crear informes personalizados que pueden ser compartidos y explorados por diferentes usuarios. Además, el diagrama de líneas es una opción efectiva para representar la relación entre dos variables numéricas a lo largo del tiempo.
 
-**Objetivo:**    El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de divorcios en España por año, resaltando las tendencias y cambios en las tasas de divorcio a lo largo de los años 2006-2021
-
-**Mensaje:**    El gráfico de líneas presenta la evolución de los divorcios en España de 2006 a 2021. Cada punto en la línea representa un año, y la altura de la línea en el eje vertical indica la cantidad de divorcios registrados en ese año. Se observan tendencias a lo largo del tiempo, como aumentos o disminuciones en la cantidad de divorcios, así como cambios en la tasa de divorcios a lo largo de los años. Esta representación destaca la importancia de comprender las dinámicas sociales y demográficas que influyen en las decisiones matrimoniales y familiares en España.
-
-
-**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas en Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite identificar rápidamente las fluctuaciones en la cantidad de divorcios a lo largo de los años y proporciona información valiosa para comprender las tendencias demográficas y sociales en España.
-
-
-Fuente: INE  https://www.ine.es/jaxiT3/Tabla.htm?tpx=58550
 
 ```
 ```
@@ -343,28 +342,38 @@ Fuente: INE  https://www.ine.es/jaxiT3/Tabla.htm?tpx=58550
 
 ```{r, echo=FALSE}
 
-#1. Importar el dataset 
-dataset <- read.csv("https://raw.githubusercontent.com/SergioGerman412/Datasets/main/USA_Housing.csv", header = TRUE)
+# Leer los datos desde la URL
+url <- "https://raw.githubusercontent.com/Gianmarcos97/30daychartchallenge/main/Day13-Family/Family%20Guy%20Dataset.csv"
+datos <- read.csv(url)
+numericas <- datos[sapply(datos, is.numeric)]
 
-#Matriz de correlación
-dataset <- subset(dataset, select = -c(Address))
-matriz_correlacion <- cor(dataset)
-par(mar = c(1, 1, 1, 1))
-corrplot(matriz_correlacion, method = "color", type = "full", tl.col = "black", tl.srt = 45, addCoef.col = "black")
-title(main = "Matriz de correlación de variables ")
+# Calcular la matriz de correlación
+matriz_cor <- cor(numericas)
+
+# Crear el heatmap de la matriz de correlación con una paleta de colores verdes
+ggplot(data = reshape2::melt(matriz_cor),
+       aes(x = Var1, y = Var2, fill = value, label = round(value, 2))) +
+  geom_tile(color = "white") +
+  geom_text(size = 3, color = "black") +
+  scale_fill_gradient2(low = "#1A422F", mid = "#7ACB6A", high = "#E9F6E2", midpoint = 0) +
+  labs(title = "Matriz de correlación de variables de la serie Family Guy",
+       x = "Variables", y = "Variables", fill = "Correlación") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 ```
 
-**Audiencia:**   Esta visualización está dirigida a cualquier persona interesada en comprender las relaciones entre diversas variables y el precio de una casa. 
+Fuente: Kaggle  https://www.kaggle.com/datasets/iamsouravbanerjee/family-guy-dataset
 
-**Objetivo:**   El propósito de esta representación visual es mostrar las relaciones de correlación entre diferentes variables y el precio de de una casa, lo que permite identificar qué factores tienen una influencia significativa en el costo de una casa. El objetivo final es predecir el precio de una casa mediante algoritmos de regresión, y analizar las correlaciones es una parte importante para evitar la multicolinealidad de datos.
+**Audiencia:**   La audiencia para esta matriz de correlación podría incluir cualquier persona interesada en comprender las relaciones entre variables numéricas relacionadas con la serie Family Guy.
 
-**Mensaje:**    La matriz de correlación muestra las relaciones de correlación entre las diversas variables y el precio de una casa. Cada celda de la matriz contiene un coeficiente de correlación que indica la fuerza y dirección de la relación entre dos variables. Se observan valores de correlación cercanos a 1 para aquellas variables que están altamente correlacionadas entre sí, mientras que valores cercanos a 0 indican una correlación débil o inexistente.
+**Objetivo:**   El objetivo principal de esta representación es analizar las relaciones entre diferentes variables numéricas relacionadas con la serie Family Guy. Esto puede incluir variables como el rating promedio, el número total de episodios, el número de televidentes estadounidenses (por millón) y tiempo en minuto.
+
+**Mensaje:**   La matriz de correlación muestra una tabla que describe las correlaciones entre todas las variables numéricas seleccionadas para el análisis. Cada celda de la tabla contiene un valor que indica la fuerza y la dirección de la relación entre dos variables. Por ejemplo, un valor cercano a 1 indica una correlación positiva fuerte, mientras que un valor cercano a -1 indica una correlación negativa fuerte. Un valor cercano a 0 indica que no hay correlación entre las dos variables.
 
 
-**Motivo elección herramienta:**  Se optó por utilizar una matriz de correlación debido a su capacidad para mostrar de manera clara y concisa las relaciones entre múltiples variables. Esta herramienta permite identificar rápidamente las variables que tienen una mayor influencia y proporciona información valiosa para la toma de decisiones en el mercado inmobiliario.
+**Motivo elección herramienta:**  Se optó por utilizar R con ggplot para crear esta matriz de correlación debido a la flexibilidad y la capacidad de personalización que ofrece ggplot para crear visualizaciones de datos avanzadas y estéticamente agradables. 
 
-
-Fuente: Kaggle  https://www.kaggle.com/datasets/aariyan101/usa-housingcsv
 
 
 ```
