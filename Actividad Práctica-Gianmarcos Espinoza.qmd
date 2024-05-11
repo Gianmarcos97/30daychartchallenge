@@ -255,47 +255,26 @@ Fuente: mtdfp https://datos.gob.es/en/catalogo/l01280796-encuesta-de-satisfaccio
 #| message: false
 #| warning: false
 
-url2 <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day11-Mobile-Friendly/Mobile%20phone%20price.csv"
+url2 <- "https://raw.githubusercontent.com/Gianmarcos97/30daychartchallenge/main/Day11-mobile-friendly/data.csv"
 datos3 <- read.csv(url2,sep = ",")
 datos3 <- unique(datos3)
 datos3$Price.... <-  as.integer(gsub("[\\$|,]", "", datos3$Price....)) 
-
-
-# Filtrar solo las filas con precios válidos
 datos3 <- datos3[!is.na(datos3$Price....), ]
 
-precio_maximo_por_marca <- datos3 %>%
-  group_by(Brand) %>%
-  summarise(Max_Price = max(Price....), .groups = "drop")
 
+hist(datos3$Price...., main = "Histograma de Precio de celulares en dólar - 2023", xlab = "Precio", ylab = "Frecuencia", col = "skyblue")
 
-grafica_dia11 <- ggplot(precio_maximo_por_marca, aes(x = reorder(Brand, Max_Price), y = Max_Price, fill = Brand)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  geom_text(aes(label = paste("$", Max_Price)),  # Agregar "$" al precio
-            position = position_stack(vjust = 0.5), 
-            size = 3, 
-            color = "black", 
-            hjust = 0.4) +
-  labs(x = "Marca", y = "Precio más alto", title = "Producto más alto de teléfonos móviles  en dólar por Marca - Año 2023") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  coord_flip() 
-
-# Cambiar el color de las barras utilizando una paleta de colores
-grafica_dia11 <- grafica_dia11 + scale_fill_viridis_d()
-print(grafica_dia11)
 ```
 
-**Audiencia:**   Esta visualización está dirigida a consumidores interesados en tecnología, analistas de mercado de teléfonos móviles, fabricantes de dispositivos y cualquier persona interesada en comprender las tendencias de precios en el mercado de teléfonos móviles.
-
-**Objetivo:**    El propósito de esta representación visual es mostrar de manera clara y concisa el producto más caro de celulares en dólares por marca de teléfono móvil en el año 2023, resaltando las marcas líderes en términos de precio y prestigio.
-
-**Mensaje:**    El diagrama de barras vertical presenta el producto más caro de celulares en dólares por marca de teléfono móvil en 2023. Cada barra representa una marca de teléfono móvil, y la altura de la barra indica el precio en dólares del producto telefónico más caro de esa marca. Se observan las marcas líderes en términos de precio, así como las diferencias de precios entre las diferentes marcas. 
-
-
-**Motivo elección herramienta:**  Se optó por utilizar un diagrama de barras vertical en R con ggplot2 debido a su capacidad para visualizar datos de manera efectiva y personalizable. Esta herramienta permite representar claramente las diferencias de precios entre las diferentes marcas de teléfonos móviles y resaltar las marcas líderes en términos de precio y prestigio en el mercado.
-
 Fuente: Kaggle  https://www.kaggle.com/datasets/rkiattisak/mobile-phone-price/data
+
+**Audiencia:**   La audiencia para este histograma podría incluir consumidores interesados en conocer el coste de un celular en el año 2023, analistas de mercado  y cualquier persona interesada en comprender la distribución de precios de los celulares en el mercado.
+
+**Objetivo:**  El objetivo principal de esta representación es visualizar la distribución de precios de los celulares en dólares en el año 2023. Esto puede ayudar a identificar patrones, como la concentración de precios en ciertos rangos o la presencia de valores atípicos, y a tomar decisiones informadas sobre la compra de un celular.
+
+**Mensaje:**  El histograma muestra la distribución de precios de los celulares en dólares en el año 2023. Cada barra representa un rango de precios, y la altura de la barra indica la frecuencia con la que se encuentran celulares dentro de ese rango de precios. Al observar el histograma, se pueden identificar rápidamente los rangos de precios más comunes y obtener una idea de la dispersión de precios en el mercado.
+
+**Motivo elección herramienta:** Se optó por utilizar R para crear este histograma debido a su capacidad para generar visualizaciones de datos de manera eficiente y profesional. R cuenta con una amplia variedad de paquetes y funciones específicamente diseñados para la visualización de datos, lo que permite crear gráficos personalizados y de alta calidad. En particular, la función hist() en R es muy útil para crear histogramas con facilidad y personalizarlos según las necesidades del usuario.
 
 
 ```
