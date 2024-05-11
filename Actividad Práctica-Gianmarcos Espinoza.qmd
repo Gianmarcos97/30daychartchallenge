@@ -380,20 +380,18 @@ Fuente: Kaggle  https://www.kaggle.com/datasets/iamsouravbanerjee/family-guy-dat
 ```
 **Día 15: historical** 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day15-historical/evolución%20del%20oro.png?raw=true)
-
-
-**Audiencia:**  Esta visualización está dirigida a inversores en metales preciosos, analistas financieros, economistas y cualquier persona interesada en comprender la evolución del precio del oro a lo largo del tiempo.
-
-**Objetivo:**   El propósito de esta representación visual es mostrar de manera clara y concisa la evolución del precio del oro por onza en su valor más alto por año, destacando las tendencias y cambios en el precio del oro durante un período de 25 años.
-
-**Mensaje:**    El gráfico de líneas presenta la evolución del precio del oro por onza en su valor más alto por año desde el año 2000 hasta el año 2024. Cada punto en la línea representa un año, y la altura de la línea en el eje vertical indica el precio más alto alcanzado por el oro en ese año. Se observan tendencias a lo largo del tiempo, como aumentos y disminuciones en el precio del oro, así como momentos de volatilidad en el mercado. Esta representación destaca la importancia del oro como una inversión segura y refugio en tiempos de incertidumbre económica y financiera.
-
-
-**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas mediante Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite identificar rápidamente las fluctuaciones en el precio del oro y proporciona información valiosa para los inversores y analistas financieros interesados en el mercado de metales preciosos.
-
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day15_Historical/evolucion%20oro%20y%20platinum.png?raw=true)
 
 Fuente: kaggle  https://www.kaggle.com/datasets/guillemservera/precious-metals-data?resource=download
+
+**Audiencia:** La audiencia para este gráfico de líneas podría incluir inversionistas en metales preciosos y cualquier persona interesada en comprender la fluctuación de precios del oro y el platinum durante ese período específico.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar la evolución del precio en dólar del oro y el platinum por onza, tomando en cuenta su valor más alto por año, durante el período de 2000 al 2009. Esto puede ayudar a identificar tendencias, volatilidades y posibles correlaciones entre ambos metales preciosos.
+
+**Mensaje:**  El gráfico de líneas muestra dos líneas: una línea azul representa el precio en dólar del platinum por onza según su valor más alto por año, y una línea celeste representa el precio en dólar del oro por onza según su valor más alto por año. Al observar el gráfico, se puede apreciar visualmente la fluctuación de precios de ambos metales preciosos a lo largo de los años y comparar sus tendencias respectivas.
+
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para generar visualizaciones de datos interactivas y dinámicas. Además, el gráfico de líneas es una opción efectiva para representar la evolución de datos numéricos a lo largo del tiempo de manera clara y comprensible.
 
 
 ```
