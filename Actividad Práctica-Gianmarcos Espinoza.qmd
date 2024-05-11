@@ -1,0 +1,745 @@
+---
+title: "Trabajo Práctico - 30 Day Chart Challenge"
+subtitle: "Gianmarcos Richard Espinoza Pachas"
+format: html
+editor: source
+---
+
+
+```{r, echo=FALSE}
+#| message: false
+#| warning: false
+
+# instalamos los paquetes 
+if(!require("ggplot2")) install.packages("ggplot2")
+if(!require("readr")) install.packages("readr")
+if(!require("treemapify")) install.packages("treemapify")
+if(!require("dplyr")) install.packages("dplyr")
+if(!require("corrplot")) install.packages("corrplot")
+if(!require("readxl")) install.packages("readxl")
+
+# paquetes
+library(readr)
+library(ggplot2)
+library(treemapify)
+library(dplyr)
+library(corrplot)
+library(readxl)
+
+```
+
+
+
+## Comparisons: Day 1-6
+
+**Día 1: part-to-whole** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day01-PartToWhole/grafico_ojivas_nucleares.png?raw=true)
+
+**Audiencia:** La fuente de datos fue obtenida de wikipedia, por ende, la audiencia de este gráfico se dirige a cualquier persona interesada en el equilibrio de poder en materia nuclear a nivel mundial.
+
+**Objetivo:** El objetivo de esta representación es proporcionar una visión clara y concisa de los países que poseen un mayor número de ojivas nucleares en el año 2023, destacando así la distribución del poder nuclear entre las naciones.
+
+**Mensaje:** La gráfica de barras vertical muestra los nueve países con mayor cantidad de ojivas nucleares en el año 2023. Rusia encabeza la lista, seguido por Estados Unidos, China, Francia y el Reino Unido. Esta distribución refleja el panorama de la posesión de armas nucleares a nivel mundial y subraya la importancia de la diplomacia y la no proliferación nuclear en la agenda internacional.
+
+**Motivo elección herramienta:** Se optó por representar estos datos utilizando un gráfico de barras vertical debido a su capacidad para visualizar de manera clara y comparativa las cantidades numéricas asociadas a cada país. Además, fue desarrollada en Google Colaboratory mediante el uso de Python con su librería Matplotlib.
+
+Fuente: Wikipedia - https://es.wikipedia.org/wiki/Pa%C3%ADses_con_armas_nucleares
+
+```
+```
+**Día 2: neo** 
+
+```{r, echo=FALSE}
+#Lectura de datos y evitamos datos duplicados de ID ya que una persona no puede morir 2 veces (datos erróneos o inusual)
+url <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day02-Neo/fallecidos_covid.csv"
+datos <- read.csv(url,sep = ";")
+datos <- datos[!duplicated(datos$UUID), ]
+
+
+conteo_departamentos <- table(datos$DEPARTAMENTO)
+top_10 <- head(sort(conteo_departamentos, decreasing = TRUE), 10)
+df_top_10 <- data.frame(DEPARTAMENTO = names(top_10), count = as.numeric(top_10))
+df_top_10 <- df_top_10[order(df_top_10$count, decreasing = TRUE), ]
+my_colors <- c("#FFB6C1", "#FF595E", "#FF595E", "#FFE5B4", "#8AC926", "#FFB6C1", "#6A4C93", "#8AC926", "#1982C4", "#6A4C93")
+options(repr.plot.width=13, repr.plot.height=8)
+
+# Gráfico de Treemap Futurista
+ggplot(df_top_10, aes(area = count, fill = DEPARTAMENTO, label = paste(DEPARTAMENTO, "\n", count))) +
+  geom_treemap() +
+  geom_treemap_text(fontface = "bold", colour = "white", place = "centre", grow = T) +
+  scale_fill_manual(values = my_colors) +
+  theme(
+    plot.title = element_text(color = "white", size = 13), 
+    plot.subtitle = element_text(color = "white", size = 9), 
+    plot.background = element_rect(fill = "#666666"),  
+    panel.grid.major = element_blank(), 
+    legend.position = "right",  
+    legend.title = element_text(color = "#000000", size = 10),  
+    legend.text = element_text(color = "#000000", size = 9),  
+    axis.text.x = element_blank(),  
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()  
+  ) +
+  labs(
+    title = "Top 10 Departamentos con mayor fallecidos por Covid-19 en Perú",
+    subtitle = "Datos del 2020-3 al 2024-3. Fuente: Minsa",
+    fill = "Departamento"
+  )
+```
+
+**Audiencia:** Esta visualización está dirigida a los interesados en salud pública, investigadores epidemiológicos y cualquier persona interesada en comprender la distribución geográfica de los fallecimientos por COVID-19 en Perú.
+
+**Objetivo:** El propósito de este treemap es proporcionar una representación visual de los departamentos peruanos con la mayor cantidad de fallecidos por COVID-19 durante un período de cuatro años, destacando así las áreas más afectadas por la pandemia en el país.
+
+**Mensaje:** El treemap muestra los diez departamentos de Perú con el mayor número de fallecidos por COVID-19, con datos obtenidos de marzo de 2020 hasta marzo de 2024, basado en datos proporcionados por el Ministerio de Salud (Minsa). Se observa que Lima Metropolitana lidera la lista, seguida por otros departamentos como Piura, La Libertad, Callao, Arequipa,  entre otros. Esta distribución geográfica destaca la heterogeneidad en el impacto de la pandemia a lo largo del territorio peruano y resalta la importancia de implementar estrategias de prevención y control adaptadas a las necesidades específicas de cada región.
+
+**Motivo elección herramienta:** El treemap se seleccionó como herramienta de visualización debido a su capacidad para representar de manera efectiva la jerarquía y la proporción de datos. Esta técnica permite comparar fácilmente la magnitud de los fallecimientos por COVID-19 entre diferentes departamentos, facilitando la identificación de patrones y tendencias geográficas en la evolución de la pandemia en Perú. Adicional, se realizó en RStudio, lenguaje R usando la librería ggplot2.
+
+Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
+
+```
+```
+
+**Día 3: makeover** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day03-%20Makeover/Makeover-actividad1.png?raw=true){ width=120% height=120% }
+
+**Audiencia:**  Este gráfico está dirigido a responsables políticos, científicos ambientales, empresas y ciudadanos interesados en comprender el panorama de las emisiones de CO2 a nivel global. Adicional, a las personas interesadas en cómo mejorar una gráfica, teniendo la posibilidad de generar una mejor visualización de datos.
+
+**Objetivo:** El objetivo de esta visualización es proporcionar una representación clara y concisa del total de toneladas métricas de emisiones de CO2 en el año 2021.
+
+**Mensaje:**  El gráfico de barras vertical muestra el total de toneladas métricas de emisiones de CO2 en el año 2021, con cada barra representando la cantidad de emisiones generadas por país. Logrando una mejor visualización en comparación con el diagrama circular.
+
+**Motivo elección herramienta:** Se optó por representar estos datos utilizando un gráfico de barras vertical debido a su capacidad para visualizar de manera efectiva las diferencias en las cantidades de emisiones de CO2 entre países. Este enfoque permite una fácil comparación de las contribuciones relativas de cada entidad a la contaminación atmosférica, lo que facilita la identificación de áreas prioritarias para la acción climática y la toma de decisiones informadas. Adicional, fue desarrollado en GoogleSheet mediante un gráfico de barras vertical.
+
+Fuente: Datosmacro - https://datosmacro.expansion.com/energia-y-medio-ambiente/emisiones-co2?anio=2021
+
+
+```
+```
+
+**Día 4: waffle** 
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day04-Waffle/Personas_fallecidas_covid19_por_sexo.png?raw=true)
+
+**Audiencia:**   Este gráfico está dirigido a profesionales de la salud, epidemiólogos, responsables de políticas públicas y cualquier persona interesada en comprender la distribución de las muertes por COVID-19 según el sexo de los afectados.
+
+**Objetivo:** El propósito de esta visualización es proporcionar una representación clara y accesible de la cantidad de personas fallecidas por COVID-19, desglosada por sexo, durante un período de cuatro años. Esto permite identificar posibles disparidades de género en el impacto de la pandemia.
+
+**Mensaje:**  El gráfico de waffle muestra la distribución de las muertes por COVID-19 según el sexo de los afectados, datos obtenidos de marzo de 2020 hasta marzo de 2024. Se observa que el número de fallecimientos es mayor en hombres que en mujeres durante todo el período analizado. Esta disparidad de género en la mortalidad por COVID-19 destaca la importancia de considerar factores biológicos, sociales y de comportamiento en la respuesta y mitigación de la pandemia.
+
+**Motivo elección herramienta:** Se eligió utilizar un gráfico de waffle generado con la librería Matplotlib en Python debido a su capacidad para representar de manera efectiva proporciones y distribuciones proporcionales de datos. Este enfoque permite visualizar rápidamente las diferencias en la mortalidad por COVID-19 entre hombres y mujeres, facilitando la interpretación de las tendencias a lo largo del tiempo.
+
+Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
+
+
+```
+```
+
+**Día 5: diverging** 
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day05-Diverging/Diverging.png?raw=true)
+
+**Audiencia:**  Esta visualización está dirigida a funcionarios de salud pública, epidemiólogos, autoridades locales y cualquier persona interesada en monitorear la incidencia del dengue en base al sexo por Provincia según la región Piura - Perú.
+
+**Objetivo:** El propósito de esta representación visual es mostrar el total del porcentaje de personas afectadas según su sexo por el dengue, de la región de Piura en el primer semestre del año 2023.
+
+**Mensaje:**  El gráfico de barras 100% apiladas presenta el porcentaje de personas con dengue en la región de Piura, Perú, durante el período de enero de 2023 a mayo de 2023.  Se utiliza un esquema de color divergente para resaltar las variaciones en la incidencia del dengue en la Región Piura, logrando visualizar que en la provincia de Huancabamba y Ayabaca, la mayoría de infectados fueron hombres, el resto de provincia fue bastante equitativo.
+
+**Motivo elección herramienta:** Se optó por utilizar un gráfico de barras 100% apiladas en Power BI debido a su capacidad para mostrar la distribución proporcional de los datos. 
+
+Fuente: Gobierno Regional de Piura     - https://www.datosabiertos.gob.pe/dataset/casos-de-dengue-en-la-regi%C3%B3n-piura-gobierno-regional-piura
+
+
+```
+```
+
+**Día 6: OECD** 
+
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day06-OECD/OECD.png?raw=true)
+
+**Audiencia:**  Esta visualización está dirigida a demógrafos, investigadores sociales y cualquier persona interesada en comprender la evolución de la distribución de la población por edad en Australia a lo largo del tiempo.
+
+**Objetivo:**  El propósito de esta representación visual es mostrar la evolución de la distribución de la población por edad en Australia durante los años 2012, 2017 y 2022 (mostrando evolución cada 5 años), destacando los cambios demográficos y las tendencias en la estructura de edad de la población.
+
+**Mensaje:**   El gráfico de líneas presenta la estimación de la población por edad en Australia para los años 2012, 2017 y 2022. Cada línea representa el año, siendo 3 líneas 2012, 2017 y 2022, enfocado a una cohorte de edad específica y muestra cómo ha variado su tamaño a lo largo del tiempo. Se observa un aumento en la población en las cohortes de edad en rango "30 a 34 años", habiando en 2012 un total de 1.59 mill., 2017 un total de 1.83 mill y en 2022 un total de 1.91 mill., entre otros detalles que se puede comprender según la gráfica.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas en Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la distribución de la población por edad en diferentes años y resaltar las tendencias demográficas clave en Australia a lo largo del período analizado.
+
+
+Fuente: OECD https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%2523SOC%2523%7CDemography%2523SOC_DEM%2523&pg=0&fc=Topic&bp=true&snb=2&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_POPULATION%40DF_POP_HIST&df[ag]=OECD.ELS.SAE&df[vs]=1.0&pd=2010%2C2022&dq=AUS..PS._T..&ly[rw]=AGE&ly[cl]=TIME_PERIOD&to[TIME_PERIOD]=false
+
+
+```
+```
+
+## Distributions: Day 7-12
+
+**Día 7: hazards** 
+
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day07-Hazards/Dia7.png?raw=true)
+
+**Audiencia:**  Esta visualización está dirigida a funcionarios de salud pública, epidemiólogos, autoridades locales y cualquier persona interesada en comprender la distribución geográfica departamental de los fallecimientos por COVID-19 en el Perú.
+
+**Objetivo:**  El propósito de esta representación visual es mostrar de manera clara y concisa el número de fallecimientos por COVID-19 en cada departamento del Perú durante un período total de cuatro años.
+
+**Mensaje:**   El gráfico de barras vertical presenta el número total de fallecimientos por COVID-19 en cada departamento del Perú con datos totales de marzo de 2020 hasta marzo de 2024, utilizando datos proporcionados por el Ministerio de Salud (Minsa). Se observa una variación en la magnitud de los fallecimientos entre los diferentes departamentos, con algunas regiones experimentando una mayor carga de mortalidad que otras. Esta representación subraya la importancia de considerar factores geográficos y demográficos en la respuesta y mitigación de la pandemia en el Perú.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de barras vertical debido a su capacidad para visualizar de manera efectiva las diferencias en las cantidades de fallecimientos por COVID-19 entre los diferentes departamentos del Perú. Esta herramienta permite identificar rápidamente las áreas más afectadas por la pandemia y proporciona información valiosa para la asignación de recursos y la implementación de estrategias de control y prevención a nivel regional. Adicional, se usó Google Colaboratory, mediante python usando la librería matplotlib.
+
+
+Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
+
+```
+```
+
+**Día 8: circular** 
+
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day08-Circular/circular.png?raw=true)
+
+**Gráfico Interactivo:** https://docs.google.com/spreadsheets/d/e/2PACX-1vQlwpUqlhCuJiZ2jGE9bljfvKDqItuTN-foJKIyXSpO3I_EGa1_sZR6c-gaJzL4FA/pubchart?oid=1757238547&amp;format=interactive
+
+**Audiencia:**  Esta visualización está dirigida a cualquier persona interesada en comprender la distribución del armamento nuclear a nivel global en el 2023.
+
+**Objetivo:**   El propósito de esta representación visual es proporcionar una visión general de los cinco países con mayor armamento nuclear en el año 2023, destacando su posición en el panorama de la proliferación nuclear.
+
+**Mensaje:**   El gráfico circular muestra los cinco países con mayor armamento nuclear en el año 2023, basado en el número de ojivas nucleares que poseen. Esta representación subraya la importancia de la diplomacia nuclear y el desarme para mitigar las tensiones y reducir el riesgo de un conflicto nuclear a nivel global.
+
+
+**Motivo elección herramienta:**  Esta herramienta de gráfico circular permite visualizar rápidamente los países con mayor armamento nuclear y destacar su importancia en el contexto de la seguridad internacional. Se complementa con el link de la gráfica interactiva para una mejor visualización, realizado en GoogleSheet.
+
+
+Fuente: Wikipedia https://es.wikipedia.org/wiki/Pa%C3%ADses_con_armas_nucleares
+
+```
+```
+
+**Día 9: major/minor** 
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day09-MajorMinor/Dia%209%20-%20infectados%20dengue.png?raw=true)
+
+
+**Audiencia:**  Esta visualización está dirigida a funcionarios de salud pública, epidemiólogos, autoridades locales y cualquier persona interesada en comprender la distribución de los casos de dengue por provincia en la región de Piura, Perú.
+
+**Objetivo:**   El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de infectados de dengue en cada provincia de la región de Piura, resaltando las áreas con mayor incidencia de la enfermedad.
+
+**Mensaje:**   El gráfico embudo presenta la cantidad de infectados de dengue por provincia en la región de Piura, Perú. Se observa una disminución gradual en el número de casos a medida que se desciende por las diferentes provincias, reflejando la distribución de la incidencia del dengue en la región. Se identifican claramente las provincias con mayor y menor número de infectados, lo que permite una identificación rápida de la situación.
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico embudo en Power BI debido a su capacidad para visualizar la distribución de los datos de manera jerárquica y proporcionar una representación clara de los diferentes niveles de incidencia del dengue por provincia en la región de Piura. Esta herramienta facilita la identificación de las áreas con mayor riesgo y la toma de decisiones informadas para la gestión de la enfermedad.
+
+
+Fuente: Gobierno Regional de Piura     - https://www.datosabiertos.gob.pe/dataset/casos-de-dengue-en-la-regi%C3%B3n-piura-gobierno-regional-piura
+
+```
+```
+
+
+**Día 10: physical** 
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day10-Physical/deporte.png?raw=true)
+
+**Gráfico Interactivo:** https://datawrapper.dwcdn.net/nASAN/1/
+
+**Audiencia:**   Esta visualización está dirigida a cualquier persona interesada en conocer las tendencias de práctica deportiva en Canarias.
+
+**Objetivo:**    El propósito de esta representación visual es mostrar la popularidad relativa de diversos deportes entre la población de Canarias durante el año 2022, resaltando los deportes más practicados en la región.
+
+**Mensaje:**    El gráfico de líneas presenta la cantidad de personas que practicaron diversos deportes en Canarias durante el año 2022. Se observan tendencias y fluctuaciones en la práctica de diferentes deportes a lo largo del año, lo que proporciona una visión de las preferencias deportivas de la población canaria. Esta representación destaca la diversidad de actividades deportivas en la región y puede ser útil para planificar eventos deportivos y programas de promoción de la actividad física.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas en Datawrapper debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la popularidad relativa de diferentes deportes y resaltar los picos y valles en la práctica deportiva a lo largo del año en Canarias. A su vez se complemento con un gráfico interactivo para una mejor visualización de datos.
+
+
+Fuente: mecd  https://estadisticas.mecd.gob.es/DeporteJaxiPx/Tabla.htm?path=/d12/f12/a2022/C03//l0/&file=H22F0325.px&type=pcaxis&L=0
+
+```
+```
+
+**Día 11: mobile-friendly** 
+
+
+```{r, echo=FALSE}
+#| message: false
+#| warning: false
+
+url2 <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day11-Mobile-Friendly/Mobile%20phone%20price.csv"
+datos3 <- read.csv(url2,sep = ",")
+datos3 <- unique(datos3)
+datos3$Price.... <-  as.integer(gsub("[\\$|,]", "", datos3$Price....)) 
+
+
+# Filtrar solo las filas con precios válidos
+datos3 <- datos3[!is.na(datos3$Price....), ]
+
+precio_maximo_por_marca <- datos3 %>%
+  group_by(Brand) %>%
+  summarise(Max_Price = max(Price....), .groups = "drop")
+
+
+grafica_dia11 <- ggplot(precio_maximo_por_marca, aes(x = reorder(Brand, Max_Price), y = Max_Price, fill = Brand)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  geom_text(aes(label = paste("$", Max_Price)),  # Agregar "$" al precio
+            position = position_stack(vjust = 0.5), 
+            size = 3, 
+            color = "black", 
+            hjust = 0.4) +
+  labs(x = "Marca", y = "Precio más alto", title = "Producto más alto de teléfonos móviles  en dólar por Marca - Año 2023") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  coord_flip() 
+
+# Cambiar el color de las barras utilizando una paleta de colores
+grafica_dia11 <- grafica_dia11 + scale_fill_viridis_d()
+print(grafica_dia11)
+```
+
+**Audiencia:**   Esta visualización está dirigida a consumidores interesados en tecnología, analistas de mercado de teléfonos móviles, fabricantes de dispositivos y cualquier persona interesada en comprender las tendencias de precios en el mercado de teléfonos móviles.
+
+**Objetivo:**    El propósito de esta representación visual es mostrar de manera clara y concisa el producto más caro de celulares en dólares por marca de teléfono móvil en el año 2023, resaltando las marcas líderes en términos de precio y prestigio.
+
+**Mensaje:**    El diagrama de barras vertical presenta el producto más caro de celulares en dólares por marca de teléfono móvil en 2023. Cada barra representa una marca de teléfono móvil, y la altura de la barra indica el precio en dólares del producto telefónico más caro de esa marca. Se observan las marcas líderes en términos de precio, así como las diferencias de precios entre las diferentes marcas. 
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un diagrama de barras vertical en R con ggplot2 debido a su capacidad para visualizar datos de manera efectiva y personalizable. Esta herramienta permite representar claramente las diferencias de precios entre las diferentes marcas de teléfonos móviles y resaltar las marcas líderes en términos de precio y prestigio en el mercado.
+
+Fuente: Kaggle  https://www.kaggle.com/datasets/rkiattisak/mobile-phone-price/data
+
+
+```
+```
+
+**Día 12: Reuters graphics** 
+
+```{r, echo=FALSE}
+#| message: false
+#| warning: false
+url2 <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day11-Mobile-Friendly/Mobile%20phone%20price.csv"
+datos3 <- read.csv(url2,sep = ",")
+datos3 <- unique(datos3)
+datos3$Price.... <-  as.integer(gsub("[\\$|,]", "", datos3$Price....)) 
+
+
+# Filtrar solo las filas con precios válidos
+datos3 <- datos3[!is.na(datos3$Price....), ]
+
+precio_maximo_por_marca <- datos3 %>%
+  group_by(Brand) %>%
+  summarise(Max_Price = max(Price....), .groups = "drop")
+
+colores <- c( "#f68e26" ,"#74c476", "#ffd430", "#f9f9f9", "#4ec7ff", "#9582c1ee" , "#948072", "#cccccc", "#cccccc", "#cccccc", "#569ed3", "#9582c1ee", "#ee665b", "#569ed6", "#948072", "#74c476", "#ee665b")
+
+# Graficar utilizando los colores personalizados
+grafica_dia12 <- ggplot(precio_maximo_por_marca, aes(x = reorder(Brand, Max_Price), y = Max_Price, fill = Brand)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste("$", Max_Price)),  # Agregar "$" al precio
+            position = position_stack(vjust = 0.5), 
+            size = 3, 
+            color = "black", 
+            hjust = 0.4) +
+  labs(x = "Marca", y = "Precio más alto", title = "Producto más alto de teléfonos móviles en dólar por Marca - Año 2023") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  coord_flip() +
+  scale_fill_manual(values = colores)  # Asignar los colores personalizados
+
+# Imprimir la gráfica
+print(grafica_dia12)
+```
+
+He realizado modificaciones a los colores del gráfico del día 11, para este caso, he usado los colores de referencia de   Reuters Graphics. Colors for dataviz - Categorical.
+
+Herramienta: Lenguaje R usando ggplot2
+
+Fuente: Kaggle  https://www.kaggle.com/datasets/rkiattisak/mobile-phone-price/data
+
+Fuente  inspiración: https://reuters-graphics.github.io/style/colors/
+
+```
+```
+
+## Comparisons: Day 13-18
+
+**Día 13: family** 
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day13-Family/Day13.png?raw=true)
+
+
+**Audiencia:**   Esta visualización está dirigida a cualquier persona interesada en comprender la evolución de los divorcios en España a lo largo del tiempo.
+
+**Objetivo:**    El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de divorcios en España por año, resaltando las tendencias y cambios en las tasas de divorcio a lo largo de los años 2006-2021
+
+**Mensaje:**    El gráfico de líneas presenta la evolución de los divorcios en España de 2006 a 2021. Cada punto en la línea representa un año, y la altura de la línea en el eje vertical indica la cantidad de divorcios registrados en ese año. Se observan tendencias a lo largo del tiempo, como aumentos o disminuciones en la cantidad de divorcios, así como cambios en la tasa de divorcios a lo largo de los años. Esta representación destaca la importancia de comprender las dinámicas sociales y demográficas que influyen en las decisiones matrimoniales y familiares en España.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas en Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite identificar rápidamente las fluctuaciones en la cantidad de divorcios a lo largo de los años y proporciona información valiosa para comprender las tendencias demográficas y sociales en España.
+
+
+Fuente: INE  https://www.ine.es/jaxiT3/Tabla.htm?tpx=58550
+
+```
+```
+**Día 14: heatmap** 
+
+```{r, echo=FALSE}
+
+#1. Importar el dataset 
+dataset <- read.csv("https://raw.githubusercontent.com/SergioGerman412/Datasets/main/USA_Housing.csv", header = TRUE)
+
+#Matriz de correlación
+dataset <- subset(dataset, select = -c(Address))
+matriz_correlacion <- cor(dataset)
+par(mar = c(1, 1, 1, 1))
+corrplot(matriz_correlacion, method = "color", type = "full", tl.col = "black", tl.srt = 45, addCoef.col = "black")
+title(main = "Matriz de correlación de variables ")
+```
+
+**Audiencia:**   Esta visualización está dirigida a cualquier persona interesada en comprender las relaciones entre diversas variables y el precio de una casa. 
+
+**Objetivo:**   El propósito de esta representación visual es mostrar las relaciones de correlación entre diferentes variables y el precio de de una casa, lo que permite identificar qué factores tienen una influencia significativa en el costo de una casa. El objetivo final es predecir el precio de una casa mediante algoritmos de regresión, y analizar las correlaciones es una parte importante para evitar la multicolinealidad de datos.
+
+**Mensaje:**    La matriz de correlación muestra las relaciones de correlación entre las diversas variables y el precio de una casa. Cada celda de la matriz contiene un coeficiente de correlación que indica la fuerza y dirección de la relación entre dos variables. Se observan valores de correlación cercanos a 1 para aquellas variables que están altamente correlacionadas entre sí, mientras que valores cercanos a 0 indican una correlación débil o inexistente.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar una matriz de correlación debido a su capacidad para mostrar de manera clara y concisa las relaciones entre múltiples variables. Esta herramienta permite identificar rápidamente las variables que tienen una mayor influencia y proporciona información valiosa para la toma de decisiones en el mercado inmobiliario.
+
+
+Fuente: Kaggle  https://www.kaggle.com/datasets/aariyan101/usa-housingcsv
+
+
+```
+```
+**Día 15: historical** 
+
+![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day15-historical/evolución%20del%20oro.png?raw=true)
+
+
+**Audiencia:**  Esta visualización está dirigida a inversores en metales preciosos, analistas financieros, economistas y cualquier persona interesada en comprender la evolución del precio del oro a lo largo del tiempo.
+
+**Objetivo:**   El propósito de esta representación visual es mostrar de manera clara y concisa la evolución del precio del oro por onza en su valor más alto por año, destacando las tendencias y cambios en el precio del oro durante un período de 25 años.
+
+**Mensaje:**    El gráfico de líneas presenta la evolución del precio del oro por onza en su valor más alto por año desde el año 2000 hasta el año 2024. Cada punto en la línea representa un año, y la altura de la línea en el eje vertical indica el precio más alto alcanzado por el oro en ese año. Se observan tendencias a lo largo del tiempo, como aumentos y disminuciones en el precio del oro, así como momentos de volatilidad en el mercado. Esta representación destaca la importancia del oro como una inversión segura y refugio en tiempos de incertidumbre económica y financiera.
+
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas mediante Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite identificar rápidamente las fluctuaciones en el precio del oro y proporciona información valiosa para los inversores y analistas financieros interesados en el mercado de metales preciosos.
+
+
+Fuente: kaggle  https://www.kaggle.com/datasets/guillemservera/precious-metals-data?resource=download
+
+
+```
+```
+
+**Día 16: weather** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day16-weather/emisiones%20c02.png?raw=true)
+
+**Gráfico Interactivo:** https://datawrapper.dwcdn.net/rZ9An/1/
+
+**Audiencia:**  Esta visualización está dirigida a ambientalistas, responsables políticos, científicos del clima y cualquier persona interesada en comprender las emisiones de CO2.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa el total de toneladas métricas de emisiones de CO2 en el año 2021, destacando los países emisores y su efecto al cambio climático.
+
+**Mensaje:**  El gráfico de barras vertical presenta el total de toneladas métricas de emisiones de CO2 en 2021. Cada barra representa un país y su altura en el eje vertical indica la cantidad de emisiones de CO2 en toneladas métricas. Se observa que países como China y Estados Unidos son los principales emisores de CO2. Esta representación destaca la magnitud del desafío en la reducción de las emisiones de gases de efecto invernadero y subraya la necesidad de acciones concertadas a nivel internacional para abordar el cambio climático.
+
+**Motivo elección herramienta:** Se optó por utilizar un gráfico de barras vertical en Datawrapper debido a su capacidad para visualizar de manera efectiva las diferencias en las cantidades de emisiones de CO2 entre los diferentes países. Esta herramienta permite identificar rápidamente los principales emisores de CO2 y proporciona información valiosa para la formulación de políticas y la toma de decisiones relacionadas con la mitigación del cambio climático.
+
+Fuente: Datosmacro - https://datosmacro.expansion.com/energia-y-medio-ambiente/emisiones-co2?anio=2021
+
+
+```
+```
+
+**Día 17: networks** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day17-network/diagrama%20de%20red.png?raw=true)
+
+**Audiencia:** Esta visualización está dirigida a expertos en política internacional, analistas de seguridad, funcionarios gubernamentales y cualquier persona interesada en comprender la distribución de ojivas nucleares a nivel mundial.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la distribución de ojivas nucleares por país en el año 2023, destacando los países con mayores arsenales nucleares y su impacto en la seguridad internacional.
+
+**Mensaje:** El diagrama de red presenta la cantidad total de ojivas nucleares en el nodo central, rodeado por nodos para cada país con su respectiva cantidad de ojivas nucleares en el año 2023. Los países se conectan al nodo central a través de líneas que representan la relación entre la cantidad total de ojivas y la contribución de cada país al arsenal nuclear. Se observa que algunos países tienen una gran cantidad de ojivas nucleares, lo que indica su importancia en el contexto de la disuasión nuclear y la estabilidad estratégica a nivel mundial. 
+
+**Motivo elección herramienta:** Se optó por utilizar un diagrama de red elaborado mediante Python (matplotlib y networkx), debido a su capacidad para mostrar relaciones complejas entre múltiples entidades de manera visual y estructurada. Esta herramienta permite representar de manera efectiva la distribución de ojivas nucleares por país y resaltar las relaciones entre la cantidad total de ojivas y la contribución de cada país al arsenal nuclear global.
+
+Fuente: Wikipedia - https://es.wikipedia.org/wiki/Pa%C3%ADses_con_armas_nucleares
+
+
+```
+```
+
+**Día 18: Asian Development Bank** 
+
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day18-AsianDevelopmentBank/tasa%20de%20fertilidad.png?raw=true)
+
+**Audiencia:** Esta visualización está dirigida a demógrafos, investigadores en salud reproductiva, planificadores familiares y cualquier persona interesada en comprender las tendencias de fertilidad en China y Filipinas a lo largo del tiempo.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la evolución de la tasa de fertilidad de niños por mujer en China y Filipinas desde mediados del siglo XX hasta la actualidad, resaltando las diferencias y similitudes en los patrones de fertilidad entre ambos países.
+
+**Mensaje:** El diagrama de líneas presenta la tasa de fertilidad de niños por mujer en China y Filipinas desde 1950 hasta 2020. Cada línea representa un país y muestra cómo ha variado su tasa de fertilidad a lo largo del tiempo. Se observan tendencias a lo largo de las décadas, como descensos en la tasa de fertilidad en ambos países debido a factores como la urbanización, el acceso a la educación y los servicios de salud reproductiva. Respecto a China es entendible por su política de "Hijo único" cuál afecta en la tasa de fertilidad como se aprecia. Esta representación destaca la importancia de comprender las dinámicas de fertilidad en diferentes contextos regionales para informar políticas y programas de salud reproductiva.
+
+**Motivo elección herramienta:** Se optó por utilizar un diagrama de líneas en Power BI, debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la evolución de la tasa de fertilidad entre China y Filipinas y proporciona información valiosa para comprender las dinámicas demográficas en ambos países.
+
+Fuente: Asian Development Bank https://data.adb.org/dataset/population-and-aging-asia-and-pacific
+
+```
+```
+
+## TimeSeries: Day 19-24
+
+**Día 19: dinosaurs** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day19-Dinosaurs/dia19.png?raw=true)
+
+**Audiencia:** Esta visualización está dirigida a entusiastas de la paleontología y cualquier persona interesada en explorar la diversidad y evolución de los dinosaurios a lo largo del período mesozoico.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de dinosaurios distintos encontrados durante el período mesozoico, abarcando los tres periodos: Triásico, Jurásico y Cretácico. El objetivo es explorar la diversidad y evolución de los dinosaurios a lo largo del tiempo geológico.
+
+**Mensaje:** El gráfico de líneas presenta la cantidad de dinosaurios distintos encontrados durante el período mesozoico. Esta representación invita a explorar la evolución y diversificación de los dinosaurios a lo largo de millones de años y subraya la importancia de los registros fósiles en nuestra comprensión del pasado.
+
+**Motivo elección herramienta:**  Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite explorar fácilmente la cantidad de dinosaurios distintos encontrados durante el período mesozoico, así como filtrar y segmentar los datos según diversos criterios, lo que facilita la exploración detallada de la diversidad de los dinosaurios a lo largo del tiempo geológico.
+
+Fuente: Kaggle https://www.kaggle.com/datasets/kjanjua/jurassic-park-the-exhaustive-dinosaur-dataset?resource=download
+
+
+```
+```
+
+**Día 20: correlation** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day20-correlation/correlación%20entre%20variables.png?raw=true)
+
+
+**Audiencia:** Esta visualización está dirigida a los analistas de la empresa y personas interesadas en comprender la relación entre las ventas y el gasto en publicidad.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la correlación entre las ventas y el gasto en publicidad a lo largo del tiempo, con el fin de identificar patrones y tendencias que puedan ayudar a optimizar las estrategias de marketing y mejorar el rendimiento empresarial.
+
+**Mensaje:** El gráfico de líneas presenta la evolución de las ventas (en azul) y el gasto en publicidad (en rojo) a lo largo de los años. Cada línea muestra cómo han variado las ventas y el gasto en publicidad en función del año. Se observa una correlación positiva entre las dos variables, ya que el aumento en el gasto en publicidad tiende a estar asociado con un aumento en las ventas en períodos posteriores. El coeficiente de correlación de 0.47 indica una correlación moderada entre las dos variables, lo que sugiere que el gasto en publicidad contribuye positivamente al aumento de las ventas, aunque también pueden influir otros factores. 
+
+**Motivo elección herramienta:** Se optó por utilizar un gráfico de líneas en R (ggplot2) debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. La elección de colores distintivos para representar las ventas y el gasto en publicidad ayuda a visualizar la relación entre las dos variables de manera efectiva. 
+
+Fuente: Maliz Store
+
+```
+```
+
+**Día 21: green energy** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day21-GreenEnergy/dia%2021.png?raw=true)
+
+
+**Audiencia:** Esta visualización está dirigida a ciudadanos preocupados por el medio ambiente y cualquier persona interesada en comprender la evolución de las fuentes de generación de electricidad en Perú a lo largo del tiempo.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa cómo ha evolucionado la contribución de diferentes fuentes de generación de electricidad en Perú durante las últimas dos décadas, destacando el cambio hacia fuentes de energía más limpias y sostenibles.
+
+**Mensaje:** El gráfico de líneas presenta tres fuentes de generación de electricidad en Perú desde el año 2000 hasta el 2020: nuclear, energía renovable y combustibles fósiles. Cada línea muestra cómo ha variado la contribución de cada fuente en el tiempo. Se observa un aumento gradual en la generación de electricidad a partir de fuentes renovables. Sin embargo, se evidencia que en Perú no hay presencia de energía nuclear. 
+
+**Motivo elección herramienta:** Se optó por utilizar un gráfico de líneas en Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la evolución de las diferentes fuentes de generación de electricidad en Perú y proporciona información valiosa para comprender las dinámicas del sector energético en el país.
+
+Fuente: Kaggle https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy
+
+```
+```
+
+**Día 22: mobility** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day22-mobility/turistas.png?raw=true)
+
+
+**Audiencia:** Esta visualización está dirigida a cualquier persona interesada en comprender las tendencias de viaje en España y sus motivaciones.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de turistas que visitan España por motivo de viaje, ya sea por trabajo o por vacaciones, durante el período de 2017 a 2021, con el fin de identificar patrones y tendencias en el comportamiento del turismo.
+
+**Mensaje:** El gráfico de líneas presenta la cantidad de turistas que visitan España por motivo de viaje, diferenciando entre aquellos que viajan por trabajo (línea azul) y aquellos que viajan por vacaciones (línea roja) desde 2017 hasta 2021. Cada línea muestra cómo ha variado la cantidad de turistas en función del año y el motivo de su viaje. Se observa que la cantidad de turistas por vacaciones tiende a ser mayor que la cantidad de turistas por trabajo en la mayoría de los años, lo que refleja la importancia del turismo de ocio en España. Sin embargo, comparando el año 2019 al 2020, se evidencia una disminución considerable en turistas, y es entendible porque fue en época de pandemia covid-19.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente las tendencias de viaje a lo largo del tiempo y proporciona herramientas para filtrar y segmentar los datos según diversos criterios, lo que facilita la identificación de patrones y la toma de decisiones informadas en el sector turístico.
+
+Fuente: ine https://www.ine.es/jaxiT3/Tabla.htm?t=13864
+
+```
+```
+
+**Día 23: tiles** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day23-tiles/electricidad%20renovable.png?raw=true)
+
+
+**Audiencia:** Esta visualización está dirigida a ciudadanos preocupados por el medio ambiente y cualquier persona interesada en comprender la evolución de la fuente de generación de electricidad renovable en Perú a lo largo del tiempo.
+
+**Objetivo:**El propósito de esta representación visual es mostrar de manera clara y concisa la contribución de la generación de electricidad renovable en Perú en términos de teravatios-hora (TWh) durante el período de 2010 a 2020, destacando las tendencias y el crecimiento en el uso de energías limpias en el país.
+
+**Mensaje:** El gráfico treemap presenta la generación de electricidad renovable en Perú en TWh desde 2010 hasta 2020. Cada cuadrícula representa un año y su tamaño corresponde a la cantidad de electricidad generada en ese año. Se observa un posible crecimiento en la generación de electricidad renovable a lo largo de los años, lo que indica un movimiento hacia una matriz energética más sostenible en el país. Esta representación destaca el compromiso de Perú con la producción de energía limpia y su contribución a la mitigación del cambio climático.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico treemap debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente la generación de electricidad renovable en Perú a lo largo del tiempo, facilitando la identificación de patrones y tendencias en el uso de energías limpias en el país.
+
+Fuente: Kaggle https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy
+
+
+```
+```
+
+**Día 24: ILO Region for Africa** 
+
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day24-ILO%20Region%20for%20Africa/ratio%20desempleo.png?raw=true)
+
+
+**Audiencia:** Esta visualización está dirigida a responsables de políticas de empleo y cualquier persona interesada en comprender las disparidades de género en el desempleo en África durante el período de 2014 a 2024.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa el ratio de desempleo en África desglosado por género, diferenciando entre el desempleo masculino y femenino, durante el período de 2014 a 2024, con el fin de identificar posibles disparidades y tendencias en el mercado laboral africano.
+
+**Mensaje:** El gráfico de columnas agrupadas presenta el ratio de desempleo en África por género desde 2014 hasta 2024. Cada año tiene dos barras agrupadas: una barra azul que representa el desempleo masculino y una barra rosada que representa el desempleo femenino. El eje "y" muestra el porcentaje de desempleo. Se observa la evolución del desempleo en ambos géneros a lo largo de los años y se pueden identificar posibles diferencias minimas en las tasas de desempleo entre hombres y mujeres.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de columnas agrupadas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente el ratio de desempleo por género en África a lo largo del tiempo, facilitando la identificación de tendencias y disparidades en el mercado laboral.
+
+Fuente: ILOSTAT https://rshiny.ilo.org/dataexplorer5/?region=AFRICA&lang=en&id=SDG_0861_SEX_RT_A
+
+
+```
+```
+
+
+## Uncertainties: Day 25-30
+
+**Día 25: global change** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day25-global%20change/cambio%20temperatura%20mundo.png?raw=true)
+
+**Gráfica interactiva:** https://datawrapper.dwcdn.net/qWSFI/1/
+
+**Audiencia:** Esta visualización está dirigida a climatólogos y cualquier persona interesada en comprender la evolución de la temperatura media global en celsius a lo largo del tiempo.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la variación de la temperatura media del año meteorológico en el mundo durante el período de 1961 a 2022, con el fin de visualizar tendencias y cambios en el clima a escala global.
+
+**Mensaje:** El gráfico de líneas presenta la variación de la temperatura media del año meteorológico en el mundo desde 1961 hasta 2022. Cada punto en la línea representa la temperatura media global de un año en particular. Se puede observar la tendencia general de aumento de la temperatura a lo largo de las décadas, indicando el calentamiento global. Los picos y valles en la línea pueden reflejar eventos climáticos extremos o variaciones temporales en el clima. Esta representación destaca la importancia de abordar el cambio climático y sus impactos en el medio ambiente, la sociedad y la economía.
+
+**Motivo elección herramienta:** Se optó por utilizar Datawrapper para crear este gráfico de líneas debido a su facilidad de uso y capacidad para generar visualizaciones de datos de alta calidad. Datawrapper ofrece opciones de personalización que permiten resaltar las tendencias climáticas a lo largo del tiempo y proporciona una plataforma intuitiva para compartir y presentar datos climáticos de manera efectiva.
+
+Fuente: IMF https://climatedata.imf.org/pages/climatechange-data
+
+
+```
+```
+
+**Día 26: ai** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day26-ai/dia26.png?raw=true)
+
+**Gráfica interactiva:** https://datawrapper.dwcdn.net/Hj2PI/1/
+
+**Audiencia:** Esta visualización está dirigida a investigadores en inteligencia artificial y cualquier persona interesada en comprender la distribución geográfica de las contribuciones a la inteligencia artificial a nivel mundial.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa los principales países que contribuyen al desarrollo de la inteligencia artificial en el año 2020, con el fin de identificar los líderes en este campo y comprender la distribución geográfica de la investigación y la innovación en inteligencia artificial.
+
+**Mensaje:** El gráfico de barras verticales presenta los top 16 países con más contribuciones a la inteligencia artificial en el año 2020. Cada barra representa un país y su altura corresponde a la cantidad de contribuciones realizadas por ese país. Se observa que China, Estados Unidos e India ocupan los tres primeros lugares en términos de cantidad de contribuciones, destacando su liderazgo en el campo de la inteligencia artificial a nivel mundial. Los demás países en la lista también muestran su participación en la investigación y el desarrollo de la inteligencia artificial, aunque en menor medida. Esta representación destaca la importancia de la colaboración internacional y la diversidad de perspectivas en el avance de la inteligencia artificial.
+
+**Motivo elección herramienta:** Se optó por utilizar un gráfico de barras vertical en DataWrapper debido a su capacidad para visualizar de manera efectiva las diferencias en las contribuciones entre diferentes países. Esta herramienta permite comparar fácilmente la cantidad de contribuciones realizadas por cada país y proporciona una representación clara de los líderes en el campo de la inteligencia artificial en el año 2020.
+
+Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-intelligence-ranking-19962021?select=scimagojr+country+rank+2020.csv
+
+
+```
+```
+
+**Día 27: good/bad** 
+
+```{r, echo=FALSE}
+url <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day27-goodbad/datos_excel.csv"
+datos <- read.csv(url,sep = ",")
+
+# Graficar la distribución de las experiencias
+ggplot(datos, aes(x = Experiencia, fill = Calificacion)) +
+  geom_histogram(binwidth = 1, alpha = 0.8) +
+  labs(x = "Experiencia del Cliente", y = "Frecuencia", 
+       title = "Distribución de la Experiencia del Cliente") +
+  scale_fill_manual(values = c("Buena" = "green", "Mala" = "red")) +
+  theme_minimal()
+
+```
+
+**Audiencia:** La audiencia de esta visualización son los responsables de la toma de decisiones del negocio, particularmente aquellos interesados en comprender la distribución de la experiencia del cliente y su impacto en la percepción de la calidad del servicio o producto.
+
+**Objetivo:**  Proporcionar una comprensión clara de cómo se distribuye la experiencia del cliente, identificando tanto las áreas de éxito (experiencias positivas) como las áreas de oportunidad (experiencias negativas), con el fin de facilitar la identificación de patrones o tendencias que puedan ser útiles para la toma de decisiones estratégicas orientadas a mejorar la satisfacción del cliente y la calidad del servicio o producto.
+
+**Mensaje:** El mensaje principal de esta visualización es que la experiencia del cliente está distribuida de manera heterogénea, con ciertos clientes reportando experiencias positivas mientras que otros reportan experiencias negativas. La distribución de la experiencia del cliente puede proporcionar insights valiosos para mejorar la calidad del servicio o producto y aumentar la satisfacción del cliente.
+
+**Motivo elección herramienta:** Se eligió crear un histograma con barras apiladas utilizando ggplot2 en R debido a su capacidad para visualizar de manera efectiva la distribución de una variable "experiencia del cliente")" y cómo se divide esa distribución entre diferentes categorías experiencia buena vs. mala. Además, ggplot2 ofrece flexibilidad en la personalización de la apariencia de la visualización para garantizar la claridad y la legibilidad de los datos.
+
+Fuente: Maliz Store
+
+
+```
+```
+
+**Día 28: trend** 
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day28-trend/dia%2028.png?raw=true)
+
+**Audiencia:** Esta tabla está dirigida a entusiastas de la paleontología y cualquier persona interesada en aprender sobre los dinosaurios más peligrosos que han existido en la Tierra.
+
+**Objetivo:** El propósito de esta tabla es proporcionar información sobre los cinco dinosaurios más peligrosos que el Tiranosaurio Rex, incluyendo su nombre, una breve descripción y una imagen representativa, con el fin de educar al público sobre la diversidad y la ferocidad de estos antiguos reptiles.
+
+**Mensaje:** La tabla presenta los nombres, descripciones y fotos de los cinco dinosaurios más peligrosos que el Tiranosaurio Rex. Cada entrada proporciona una breve descripción de las características distintivas y el comportamiento de cada especie, destacando su reputación como depredadores temibles durante la era de los dinosaurios. Las imágenes adjuntas ayudan a visualizar cómo se cree que lucían estos dinosaurios, lo que añade un elemento visual a la experiencia educativa. En conjunto, la tabla transmite la idea de la diversidad y la fascinante variedad de dinosaurios carnívoros que poblaron la Tierra hace millones de años.
+
+**Motivo elección herramienta:** Se optó por utilizar una tabla en Power BI debido a su capacidad para organizar la información de manera clara y concisa. La tabla permite presentar los nombres, descripciones y fotos de los dinosaurios de forma ordenada y fácilmente legible, lo que facilita al público la comprensión y la absorción de la información. Además, la inclusión de imágenes en la tabla ayuda a captar la atención del espectador y a enriquecer la experiencia visual.
+
+Fuente: Univision https://www.univision.com/explora/7-dinosaurios-mas-poderosos-que-el-t-rex-quien-era-el-verdadero-rey-de-la-prehistoria
+
+```
+```
+
+**Día 29: black'n'white** 
+
+```{r, echo=FALSE}
+url <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day27-goodbad/datos_excel.csv"
+datos <- read.csv(url, sep = ",")
+
+# Graficar la distribución de las experiencias
+ggplot(datos, aes(x = Experiencia, fill = Calificacion)) +
+  geom_histogram(binwidth = 1, alpha = 0.8) +
+  labs(x = "Experiencia del Cliente", y = "Frecuencia", 
+       title = "Distribución de la Experiencia del Cliente") +
+  scale_fill_manual(values = c("Buena" = "white", "Mala" = "black")) +
+  theme_minimal() + 
+  theme(panel.background = element_rect(fill = "gray50"))  
+```
+
+**Audiencia:** La audiencia de esta visualización son los responsables de la toma de decisiones del negocio, particularmente aquellos interesados en comprender la distribución de la experiencia del cliente y su impacto en la percepción de la calidad del servicio o producto.
+
+**Objetivo:**  Proporcionar una comprensión clara de cómo se distribuye la experiencia del cliente, identificando tanto las áreas de éxito (experiencias positivas) como las áreas de oportunidad (experiencias negativas), con el fin de facilitar la identificación de patrones o tendencias que puedan ser útiles para la toma de decisiones estratégicas orientadas a mejorar la satisfacción del cliente y la calidad del servicio o producto.
+
+**Mensaje:** El mensaje principal de esta visualización es que la experiencia del cliente está distribuida de manera heterogénea, con ciertos clientes reportando experiencias positivas mientras que otros reportan experiencias negativas. La distribución de la experiencia del cliente puede proporcionar insights valiosos para mejorar la calidad del servicio o producto y aumentar la satisfacción del cliente.
+
+**Motivo elección herramienta:** Se eligió crear un histograma con barras apiladas utilizando ggplot2 en R debido a su capacidad para visualizar de manera efectiva la distribución de una variable "experiencia del cliente")" y cómo se divide esa distribución entre diferentes categorías experiencia buena vs. mala. Además, ggplot2 ofrece flexibilidad en la personalización de la apariencia de la visualización para garantizar la claridad y la legibilidad de los datos.
+
+
+Fuente: Maliz Store 
+
+```
+```
+
+**Día 30: FiveThirtyEight** 
+
+
+![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day30-FiveThiryEight/día30.png?raw=true)
+
+**Audiencia:** Esta visualización está dirigida a  cualquier persona interesada en comprender la percepción pública sobre el desempeño de Donald Trump como presidente de Estados Unidos.
+
+**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la tendencia de la aprobación y desaprobación de Donald Trump por parte de los estadounidenses a lo largo de un período de tiempo determinado, con el fin de analizar la evolución de la opinión pública sobre su presidencia.
+
+**Mensaje:** El gráfico de líneas presenta dos líneas: una que representa la cantidad de aprobación y otra que representa la cantidad de desaprobación de Donald Trump como presidente de Estados Unidos. Esta representación permite una visualización clara de la dinámica de la opinión pública sobre la presidencia de Trump y puede proporcionar información valiosa para comprender su impacto político.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente la tendencia de la aprobación y desaprobación de Donald Trump a lo largo del tiempo, así como realizar análisis más detallados mediante filtros y segmentaciones de datos.
+
+Fuente: FiveThiryEight https://projects.fivethirtyeight.com/polls/favorability/joe-biden/
+
+
+
+
+
