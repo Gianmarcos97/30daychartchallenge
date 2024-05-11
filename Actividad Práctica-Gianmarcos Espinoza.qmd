@@ -34,69 +34,36 @@ library(readxl)
 
 **Día 1: part-to-whole** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day01-PartToWhole/grafico_ojivas_nucleares.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day01-PartToWhole/deportes%20más%20prácticados.png?raw=true)
 
-**Audiencia:** La fuente de datos fue obtenida de wikipedia, por ende, la audiencia de este gráfico se dirige a cualquier persona interesada en el equilibrio de poder en materia nuclear a nivel mundial.
+Fuente: mecd  https://estadisticas.mecd.gob.es/DeporteJaxiPx/Tabla.htm?path=/d12/f12/a2022/C03//l0/&file=H22F0325.px&type=pcaxis&L=0
 
-**Objetivo:** El objetivo de esta representación es proporcionar una visión clara y concisa de los países que poseen un mayor número de ojivas nucleares en el año 2023, destacando así la distribución del poder nuclear entre las naciones.
+**Audiencia:** La audiencia para esta gráfica de barras podría ser tanto residentes de Canarias interesados en la actividad deportiva de su región o cualquier persona interesada que desee conocer las tendencias y preferencias deportivas.
 
-**Mensaje:** La gráfica de barras vertical muestra los nueve países con mayor cantidad de ojivas nucleares en el año 2023. Rusia encabeza la lista, seguido por Estados Unidos, China, Francia y el Reino Unido. Esta distribución refleja el panorama de la posesión de armas nucleares a nivel mundial y subraya la importancia de la diplomacia y la no proliferación nuclear en la agenda internacional.
+**Objetivo:** El objetivo principal de esta representación es ofrecer una visión clara de los deportes más populares en Canarias durante el año 2022. Esto puede ser útil para identificar las actividades deportivas más relevantes en la región, comprender las preferencias deportivas de la población local y orientar estrategias de promoción y desarrollo deportivo.
 
-**Motivo elección herramienta:** Se optó por representar estos datos utilizando un gráfico de barras vertical debido a su capacidad para visualizar de manera clara y comparativa las cantidades numéricas asociadas a cada país. Además, fue desarrollada en Google Colaboratory mediante el uso de Python con su librería Matplotlib.
+**Mensaje:** El diagrama de barras vertical muestra los deportes más practicados en Canarias durante el año 2022, lo que proporciona una instantánea de las preferencias deportivas de la población en la región. Por ejemplo, podría mostrar que la natación, la gimnasia intensa y suave son los deportes más populares. Este mensaje destaca la diversidad de actividades deportivas en Canarias y puede servir como base para fomentar la práctica deportiva y desarrollar infraestructuras adecuadas para satisfacer las necesidades de la comunidad.
 
-Fuente: Wikipedia - https://es.wikipedia.org/wiki/Pa%C3%ADses_con_armas_nucleares
+**Motivo elección herramienta:** Se optó por utilizar Power BI para este diagrama de barras vertical debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite crear gráficos atractivos y personalizables que pueden ser fácilmente compartidos y explorados por diferentes usuarios. Además, ofrece la posibilidad de integrar datos de diversas fuentes y realizar análisis más avanzados, lo que puede ser beneficioso para comprender mejor las tendencias deportivas en Canarias.
+
 
 ```
 ```
 **Día 2: neo** 
 
-```{r, echo=FALSE}
-#Lectura de datos y evitamos datos duplicados de ID ya que una persona no puede morir 2 veces (datos erróneos o inusual)
-url <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day02-Neo/fallecidos_covid.csv"
-datos <- read.csv(url,sep = ";")
-datos <- datos[!duplicated(datos$UUID), ]
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day01-PartToWhole/deportes%20más%20prácticados.png?raw=true)
+
+Fuente: Gobierno Regional de Piura     https://www.datosabiertos.gob.pe/dataset/casos-de-dengue-en-la-regi%C3%B3n-piura-gobierno-regional-piura
 
 
-conteo_departamentos <- table(datos$DEPARTAMENTO)
-top_10 <- head(sort(conteo_departamentos, decreasing = TRUE), 10)
-df_top_10 <- data.frame(DEPARTAMENTO = names(top_10), count = as.numeric(top_10))
-df_top_10 <- df_top_10[order(df_top_10$count, decreasing = TRUE), ]
-my_colors <- c("#FFB6C1", "#FF595E", "#FF595E", "#FFE5B4", "#8AC926", "#FFB6C1", "#6A4C93", "#8AC926", "#1982C4", "#6A4C93")
-options(repr.plot.width=13, repr.plot.height=8)
+**Audiencia:** La audiencia para este gráfico de cascada podría ser personal médico en la región Piura, así como también la comunidad en general interesada en la prevención y control de enfermedades como el dengue.
 
-# Gráfico de Treemap Futurista
-ggplot(df_top_10, aes(area = count, fill = DEPARTAMENTO, label = paste(DEPARTAMENTO, "\n", count))) +
-  geom_treemap() +
-  geom_treemap_text(fontface = "bold", colour = "white", place = "centre", grow = T) +
-  scale_fill_manual(values = my_colors) +
-  theme(
-    plot.title = element_text(color = "white", size = 13), 
-    plot.subtitle = element_text(color = "white", size = 9), 
-    plot.background = element_rect(fill = "#666666"),  
-    panel.grid.major = element_blank(), 
-    legend.position = "right",  
-    legend.title = element_text(color = "#000000", size = 10),  
-    legend.text = element_text(color = "#000000", size = 9),  
-    axis.text.x = element_blank(),  
-    axis.text.y = element_blank(), 
-    axis.title.y = element_blank()  
-  ) +
-  labs(
-    title = "Top 10 Departamentos con mayor fallecidos por Covid-19 en Perú",
-    subtitle = "Datos del 2020-3 al 2024-3. Fuente: Minsa",
-    fill = "Departamento"
-  )
-```
+**Objetivo:** El objetivo principal de esta representación es proporcionar una visualización clara de la cantidad de infectados de dengue por provincia en la región Piura, Perú. Esto podría ayudar a identificar las áreas con mayores tasas de incidencia, detectar posibles brotes, y facilitar la asignación de recursos y la implementación de medidas preventivas y de control. Esta data  es obtenida del enero 2023 a mayo 2023.
 
-**Audiencia:** Esta visualización está dirigida a los interesados en salud pública, investigadores epidemiológicos y cualquier persona interesada en comprender la distribución geográfica de los fallecimientos por COVID-19 en Perú.
+**Mensaje:** El gráfico de cascada muestra la cantidad de infectados de dengue por provincia en la región Piura, Perú, durante un período específico. El mensaje principal es resaltar la situación epidemiológica del dengue en la región y la importancia de tomar medidas para prevenir su propagación y proteger la salud de la población.
 
-**Objetivo:** El propósito de este treemap es proporcionar una representación visual de los departamentos peruanos con la mayor cantidad de fallecidos por COVID-19 durante un período de cuatro años, destacando así las áreas más afectadas por la pandemia en el país.
+**Motivo elección herramienta:** Se optó por utilizar Power BI para este gráfico de cascada debido a su capacidad para visualizar datos de manera dinámica y fácil de entender. Power BI permite crear gráficos interactivos que pueden ser explorados y filtrados según las necesidades del usuario. Además, ofrece la posibilidad de integrar datos de diversas fuentes y realizar análisis más avanzados, lo que puede ser útil para comprender mejor la dinámica de la enfermedad y tomar decisiones informadas en materia de salud pública.
 
-**Mensaje:** El treemap muestra los diez departamentos de Perú con el mayor número de fallecidos por COVID-19, con datos obtenidos de marzo de 2020 hasta marzo de 2024, basado en datos proporcionados por el Ministerio de Salud (Minsa). Se observa que Lima Metropolitana lidera la lista, seguida por otros departamentos como Piura, La Libertad, Callao, Arequipa,  entre otros. Esta distribución geográfica destaca la heterogeneidad en el impacto de la pandemia a lo largo del territorio peruano y resalta la importancia de implementar estrategias de prevención y control adaptadas a las necesidades específicas de cada región.
-
-**Motivo elección herramienta:** El treemap se seleccionó como herramienta de visualización debido a su capacidad para representar de manera efectiva la jerarquía y la proporción de datos. Esta técnica permite comparar fácilmente la magnitud de los fallecimientos por COVID-19 entre diferentes departamentos, facilitando la identificación de patrones y tendencias geográficas en la evolución de la pandemia en Perú. Adicional, se realizó en RStudio, lenguaje R usando la librería ggplot2.
-
-Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
 
 ```
 ```
