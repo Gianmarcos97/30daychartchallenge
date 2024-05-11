@@ -1,5 +1,5 @@
 
-datos <- read.csv("C:/Users/Acer/Desktop/GianmarcosEspinoza_trabajo_práctico/Day08-circular/paises-con-mas-aportes.csv", header = TRUE, stringsAsFactors = FALSE)
+datos <- read.csv("https://raw.githubusercontent.com/Gianmarcos97/30daychartchallenge/main/Day08-circular/paises-con-mas-aportes.csv", header = TRUE, stringsAsFactors = FALSE)
 datos <- head(datos, 6)
 
 # Crear un gráfico circular con etiquetas de valores

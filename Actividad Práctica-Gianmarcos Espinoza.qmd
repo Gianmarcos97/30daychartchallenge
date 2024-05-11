@@ -150,7 +150,7 @@ Fuente: Tai Loy
 **Día 6: OECD** 
 
 
-![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day06-OECD/poblaci%C3%B3n%20en%20Italia%20por%20edad.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day06-OECD/poblaci%C3%B3n%20en%20Italia%20por%20edad.png?raw=true)    
 
 Fuente: OECD https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%2523SOC%2523%7CDemography%2523SOC_DEM%2523&pg=0&fc=Topic&bp=true&snb=2&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_POPULATION%40DF_POP_HIST&df[ag]=OECD.ELS.SAE&df[vs]=1.0&pd=2010%2C2022&dq=AUS..PS._T..&ly[rw]=AGE&ly[cl]=TIME_PERIOD&to[TIME_PERIOD]=false
 
@@ -165,7 +165,6 @@ Fuente: OECD https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%2523SO
 **Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas para este análisis debido a su capacidad para visualizar tendencias y comparar valores a lo largo del tiempo de manera clara y efectiva. 
 
 
-
 ```
 ```
 
@@ -174,19 +173,18 @@ Fuente: OECD https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CSociety%2523SO
 **Día 7: hazards** 
 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day07-Hazards/Dia7.png?raw=true)
-
-**Audiencia:**  Esta visualización está dirigida a funcionarios de salud pública, epidemiólogos, autoridades locales y cualquier persona interesada en comprender la distribución geográfica departamental de los fallecimientos por COVID-19 en el Perú.
-
-**Objetivo:**  El propósito de esta representación visual es mostrar de manera clara y concisa el número de fallecimientos por COVID-19 en cada departamento del Perú durante un período total de cuatro años.
-
-**Mensaje:**   El gráfico de barras vertical presenta el número total de fallecimientos por COVID-19 en cada departamento del Perú con datos totales de marzo de 2020 hasta marzo de 2024, utilizando datos proporcionados por el Ministerio de Salud (Minsa). Se observa una variación en la magnitud de los fallecimientos entre los diferentes departamentos, con algunas regiones experimentando una mayor carga de mortalidad que otras. Esta representación subraya la importancia de considerar factores geográficos y demográficos en la respuesta y mitigación de la pandemia en el Perú.
-
-
-**Motivo elección herramienta:**  Se optó por utilizar un gráfico de barras vertical debido a su capacidad para visualizar de manera efectiva las diferencias en las cantidades de fallecimientos por COVID-19 entre los diferentes departamentos del Perú. Esta herramienta permite identificar rápidamente las áreas más afectadas por la pandemia y proporciona información valiosa para la asignación de recursos y la implementación de estrategias de control y prevención a nivel regional. Adicional, se usó Google Colaboratory, mediante python usando la librería matplotlib.
-
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day07-Hazards/fallecidos%20por%20covid.png?raw=true)
 
 Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
+
+**Audiencia:**  La audiencia para este gráfico de barras podría incluir funcionarios de salud pública y la población en general interesada en comprender el impacto de la pandemia de COVID-19 por departamento en el Perú.
+
+**Objetivo:**  El objetivo principal de esta representación es visualizar y comparar el número de fallecidos por COVID-19 en los diferentes departamentos del Perú a lo largo del período de 2021-2023. Esto puede ayudar a identificar las áreas más afectadas por la pandemia en su momento.
+
+**Mensaje:**  El gráfico de barras muestra barras individuales para cada departamento del Perú, donde la altura de cada barra representa el número de fallecidos por COVID-19 en ese departamento durante el período de 2021-2023. Al observar el gráfico, se pueden identificar rápidamente los departamentos con un mayor número de fallecidos.
+
+**Motivo elección herramienta:**  Se optó por utilizar un gráfico de barras en Power BI para este análisis debido a su capacidad para visualizar de manera efectiva comparaciones entre categorías (en este caso, los diferentes departamentos del Perú) y para representar datos numéricos de manera clara y accesible. 
+
 
 ```
 ```
@@ -194,40 +192,38 @@ Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19
 **Día 8: circular** 
 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day08-Circular/circular.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day08-circular/paises-con-mas-aportes.png?raw=true)
 
-**Gráfico Interactivo:** https://docs.google.com/spreadsheets/d/e/2PACX-1vQlwpUqlhCuJiZ2jGE9bljfvKDqItuTN-foJKIyXSpO3I_EGa1_sZR6c-gaJzL4FA/pubchart?oid=1757238547&amp;format=interactive
+Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-intelligence-ranking-19962021?select=scimagojr+country+rank+2020.csv
 
-**Audiencia:**  Esta visualización está dirigida a cualquier persona interesada en comprender la distribución del armamento nuclear a nivel global en el 2023.
+**Audiencia:**  La audiencia para esta gráfica circular podría incluir estudiantes y entusiastas del campo de la IA que deseen conocer la distribución de las contribuciones a nivel global.
 
-**Objetivo:**   El propósito de esta representación visual es proporcionar una visión general de los cinco países con mayor armamento nuclear en el año 2023, destacando su posición en el panorama de la proliferación nuclear.
+**Objetivo:**  El objetivo principal de esta representación es mostrar de manera visual la proporción de contribuciones a la Inteligencia Artificial realizadas por los seis principales países en 2020. Esto puede ayudar a entender la distribución geográfica del talento, la investigación y la inversión en el campo de la IA durante ese año.
 
-**Mensaje:**   El gráfico circular muestra los cinco países con mayor armamento nuclear en el año 2023, basado en el número de ojivas nucleares que poseen. Esta representación subraya la importancia de la diplomacia nuclear y el desarme para mitigar las tensiones y reducir el riesgo de un conflicto nuclear a nivel global.
-
-
-**Motivo elección herramienta:**  Esta herramienta de gráfico circular permite visualizar rápidamente los países con mayor armamento nuclear y destacar su importancia en el contexto de la seguridad internacional. Se complementa con el link de la gráfica interactiva para una mejor visualización, realizado en GoogleSheet.
+**Mensaje:**   La gráfica circular muestra seis secciones, cada una representando un país y su proporción de contribuciones a la Inteligencia Artificial en 2020. Por ejemplo, se destacaría que China, Estados Unidos e India ocupan los tres primeros puestos en términos de contribuciones. Este mensaje subraya la importancia de estos países en el desarrollo y avance de la Inteligencia Artificial a nivel mundial durante el año 2020.
 
 
-Fuente: Wikipedia https://es.wikipedia.org/wiki/Pa%C3%ADses_con_armas_nucleares
+**Motivo elección herramienta:**  Se optó por utilizar R para crear esta gráfica circular debido a su capacidad para generar visualizaciones de datos de manera eficiente y profesional. R cuenta con una amplia variedad de paquetes y funciones específicamente diseñados para la visualización de datos, lo que permite crear gráficas personalizadas y de alta calidad. En particular, el paquete ggplot2 es muy popular y ofrece una amplia gama de opciones para crear gráficos circulares de forma efectiva.
+
+
 
 ```
 ```
 
 **Día 9: major/minor** 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day09-MajorMinor/Dia%209%20-%20infectados%20dengue.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day09-MajorMinor/infectados.png?raw=true)
 
+Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
 
-**Audiencia:**  Esta visualización está dirigida a funcionarios de salud pública, epidemiólogos, autoridades locales y cualquier persona interesada en comprender la distribución de los casos de dengue por provincia en la región de Piura, Perú.
+**Audiencia:** La audiencia para esta gráfica podría incluir funcionarios de salud pública y cualquier persona interesada en comprender la distribución de casos de COVID-19 en los diferentes departamentos del Perú.
 
-**Objetivo:**   El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de infectados de dengue en cada provincia de la región de Piura, resaltando las áreas con mayor incidencia de la enfermedad.
+**Objetivo:**   El objetivo principal de esta representación es visualizar de manera efectiva la cantidad de casos de COVID-19 en los trece principales departamentos del Perú. Esto puede ayudar a identificar los departamentos más afectados por la pandemia.
 
-**Mensaje:**   El gráfico embudo presenta la cantidad de infectados de dengue por provincia en la región de Piura, Perú. Se observa una disminución gradual en el número de casos a medida que se desciende por las diferentes provincias, reflejando la distribución de la incidencia del dengue en la región. Se identifican claramente las provincias con mayor y menor número de infectados, lo que permite una identificación rápida de la situación.
+**Mensaje:**   El gráfico de embudo muestra trece segmentos, cada uno representando un departamento del Perú, ordenados de mayor a menor número de casos de COVID-19. Al observar el embudo, se puede ver claramente la distribución de casos entre los diferentes departamentos y la magnitud de la brecha entre los más afectados y los menos afectados.
 
-**Motivo elección herramienta:**  Se optó por utilizar un gráfico embudo en Power BI debido a su capacidad para visualizar la distribución de los datos de manera jerárquica y proporcionar una representación clara de los diferentes niveles de incidencia del dengue por provincia en la región de Piura. Esta herramienta facilita la identificación de las áreas con mayor riesgo y la toma de decisiones informadas para la gestión de la enfermedad.
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear esta gráfica de embudo debido a su capacidad para generar visualizaciones de datos interactivas y dinámicas. Power BI permite conectar múltiples fuentes de datos, realizar análisis avanzados y crear informes personalizados que pueden ser compartidos y explorados por diferentes usuarios. Además, el gráfico de embudo es una opción efectiva para representar la progresión de datos de manera visual y fácilmente comprensible.
 
-
-Fuente: Gobierno Regional de Piura     - https://www.datosabiertos.gob.pe/dataset/casos-de-dengue-en-la-regi%C3%B3n-piura-gobierno-regional-piura
 
 ```
 ```
