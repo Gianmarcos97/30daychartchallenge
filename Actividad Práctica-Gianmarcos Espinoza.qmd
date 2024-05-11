@@ -89,17 +89,17 @@ Fuente: DrivenData - https://www.drivendata.org/competitions/44/dengai-predictin
 
 **Día 4: waffle** 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day04-Waffle/Personas_fallecidas_covid19_por_sexo.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day04-waffle/waffle.png?raw=true)
 
-**Audiencia:**   Este gráfico está dirigido a profesionales de la salud, epidemiólogos, responsables de políticas públicas y cualquier persona interesada en comprender la distribución de las muertes por COVID-19 según el sexo de los afectados.
+Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-intelligence-ranking-19962021?select=scimagojr+country+rank+2020.csv
 
-**Objetivo:** El propósito de esta visualización es proporcionar una representación clara y accesible de la cantidad de personas fallecidas por COVID-19, desglosada por sexo, durante un período de cuatro años. Esto permite identificar posibles disparidades de género en el impacto de la pandemia.
+**Audiencia:**   La audiencia para este gráfico de waffle podría ser estudiantes y entusiastas del campo de la IA que deseen conocer los principales contribuyentes a nivel global.
 
-**Mensaje:**  El gráfico de waffle muestra la distribución de las muertes por COVID-19 según el sexo de los afectados, datos obtenidos de marzo de 2020 hasta marzo de 2024. Se observa que el número de fallecimientos es mayor en hombres que en mujeres durante todo el período analizado. Esta disparidad de género en la mortalidad por COVID-19 destaca la importancia de considerar factores biológicos, sociales y de comportamiento en la respuesta y mitigación de la pandemia.
+**Objetivo:** El objetivo principal de esta representación es ofrecer una visualización intuitiva y efectiva de los cinco países que más contribuyeron al desarrollo de la Inteligencia Artificial en 2020. Esto puede ayudar a entender la distribución geográfica del talento, la investigación y la inversión en el campo de la IA a nivel mundial durante ese año.
 
-**Motivo elección herramienta:** Se eligió utilizar un gráfico de waffle generado con la librería Matplotlib en Python debido a su capacidad para representar de manera efectiva proporciones y distribuciones proporcionales de datos. Este enfoque permite visualizar rápidamente las diferencias en la mortalidad por COVID-19 entre hombres y mujeres, facilitando la interpretación de las tendencias a lo largo del tiempo.
+**Mensaje:**  El gráfico de waffle muestra la proporción de contribuciones a la Inteligencia Artificial por parte de los cinco países principales en 2020. Cada cuadro del waffle representa una parte del total, lo que permite visualizar de manera clara la participación relativa de cada país en el panorama de la IA. Este mensaje destaca la importancia de la colaboración internacional y la diversidad de talento en el avance de la inteligencia artificial.
 
-Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
+**Motivo elección herramienta:** Se optó por utilizar Python para crear este gráfico de waffle debido a la flexibilidad y la amplia gama de bibliotecas disponibles para visualización de datos. El gráfico de waffle es una opción efectiva para representar proporciones y comparaciones entre categorías, lo que lo hace adecuado para este tipo de análisis.
 
 
 ```
