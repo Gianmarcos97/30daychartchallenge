@@ -231,21 +231,19 @@ Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19
 
 **Día 10: physical** 
 
-![](https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day10-Physical/deporte.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day10-Physical/satisfaccion%20con%20el%20programa%20Triatlon.png?raw=true)
 
-**Gráfico Interactivo:** https://datawrapper.dwcdn.net/nASAN/1/
+Fuente: mtdfp https://datos.gob.es/en/catalogo/l01280796-encuesta-de-satisfaccion-de-participantes-en-el-programa-triatlon
 
-**Audiencia:**   Esta visualización está dirigida a cualquier persona interesada en conocer las tendencias de práctica deportiva en Canarias.
+**Audiencia:**  La audiencia para este gráfico de barras podría ser personal del ayuntamiento de Madrid - analistas del programa y cualquier persona interesada en la calidad y la percepción de los programas deportivos en la comunidad.
 
-**Objetivo:**    El propósito de esta representación visual es mostrar la popularidad relativa de diversos deportes entre la población de Canarias durante el año 2022, resaltando los deportes más practicados en la región.
+**Objetivo:** El objetivo principal de esta representación es visualizar la satisfacción de los participantes con el programa de triatlón en la ciudad de Madrid durante junio de 2023. Esto puede ayudar a evaluar la efectividad del programa, identificar áreas de mejora y tomar decisiones informadas para futuras ediciones del evento.
 
-**Mensaje:**    El gráfico de líneas presenta la cantidad de personas que practicaron diversos deportes en Canarias durante el año 2022. Se observan tendencias y fluctuaciones en la práctica de diferentes deportes a lo largo del año, lo que proporciona una visión de las preferencias deportivas de la población canaria. Esta representación destaca la diversidad de actividades deportivas en la región y puede ser útil para planificar eventos deportivos y programas de promoción de la actividad física.
-
-
-**Motivo elección herramienta:**  Se optó por utilizar un gráfico de líneas en Datawrapper debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la popularidad relativa de diferentes deportes y resaltar los picos y valles en la práctica deportiva a lo largo del año en Canarias. A su vez se complemento con un gráfico interactivo para una mejor visualización de datos.
+**Mensaje:**  El gráfico de barras muestra la satisfacción de los participantes con el programa de triatlón en la ciudad de Madrid en junio de 2023, representada en una escala de puntuación. Cada barra representa un puntaje de satisfacción. Al observar el gráfico, se pueden identificar rápidamente las áreas en las que el programa es más exitoso y aquellas que pueden requerir atención adicional.
 
 
-Fuente: mecd  https://estadisticas.mecd.gob.es/DeporteJaxiPx/Tabla.htm?path=/d12/f12/a2022/C03//l0/&file=H22F0325.px&type=pcaxis&L=0
+**Motivo elección herramienta:**  Se optó por utilizar Power BI para crear este gráfico de barras debido a su capacidad para generar visualizaciones de datos interactivas y dinámicas. Power BI permite conectar múltiples fuentes de datos, realizar análisis avanzados y crear informes personalizados que pueden ser compartidos y explorados por diferentes usuarios. Además, el gráfico de barras es una opción efectiva para representar datos categóricos de manera clara y fácilmente comprensible.
+
 
 ```
 ```
