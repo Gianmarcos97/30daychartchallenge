@@ -612,7 +612,7 @@ Fuente: IMF https://climatedata.imf.org/pages/climatechange-data
 
 **Gráfica interactiva:** https://docs.google.com/spreadsheets/d/e/2PACX-1vSopHVUQwXmqnw8BY5LNKazGpgQB87Z8sUdF4MACNiG1Zk3T-F0RuKCUw46XofLKw/pubchart?oid=1356976913&format=interactive
 
-**Audiencia:** ELa audiencia para este gráfico de líneas podría incluir investigadores ambientales y cualquier persona interesada en comprender la evolución de las temperaturas promedio a nivel mundial durante ese período.
+**Audiencia:** La audiencia para este gráfico de líneas podría incluir investigadores ambientales y cualquier persona interesada en comprender la evolución de las temperaturas promedio a nivel mundial durante ese período.
 
 **Objetivo:** El objetivo principal de esta representación es visualizar y analizar el incremento o decrecimiento en la temperatura promedio mundial a lo largo de los años, desde 2001 hasta 2022. Esto puede ayudar a identificar tendencias a largo plazo en el calentamiento global y a comprender la magnitud del cambio climático durante ese período.
 
@@ -626,19 +626,19 @@ Fuente: IMF https://climatedata.imf.org/pages/climatechange-data
 
 **Día 26: ai** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day26-ai/dia26.png?raw=true)
-
-**Gráfica interactiva:** https://datawrapper.dwcdn.net/Hj2PI/1/
-
-**Audiencia:** Esta visualización está dirigida a investigadores en inteligencia artificial y cualquier persona interesada en comprender la distribución geográfica de las contribuciones a la inteligencia artificial a nivel mundial.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa los principales países que contribuyen al desarrollo de la inteligencia artificial en el año 2020, con el fin de identificar los líderes en este campo y comprender la distribución geográfica de la investigación y la innovación en inteligencia artificial.
-
-**Mensaje:** El gráfico de barras verticales presenta los top 16 países con más contribuciones a la inteligencia artificial en el año 2020. Cada barra representa un país y su altura corresponde a la cantidad de contribuciones realizadas por ese país. Se observa que China, Estados Unidos e India ocupan los tres primeros lugares en términos de cantidad de contribuciones, destacando su liderazgo en el campo de la inteligencia artificial a nivel mundial. Los demás países en la lista también muestran su participación en la investigación y el desarrollo de la inteligencia artificial, aunque en menor medida. Esta representación destaca la importancia de la colaboración internacional y la diversidad de perspectivas en el avance de la inteligencia artificial.
-
-**Motivo elección herramienta:** Se optó por utilizar un gráfico de barras vertical en DataWrapper debido a su capacidad para visualizar de manera efectiva las diferencias en las contribuciones entre diferentes países. Esta herramienta permite comparar fácilmente la cantidad de contribuciones realizadas por cada país y proporciona una representación clara de los líderes en el campo de la inteligencia artificial en el año 2020.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day26-ai/aportes%20ia.png?raw=true)
 
 Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-intelligence-ranking-19962021?select=scimagojr+country+rank+2020.csv
+
+**Gráfica interactiva:** https://docs.google.com/spreadsheets/d/e/2PACX-1vSopHVUQwXmqnw8BY5LNKazGpgQB87Z8sUdF4MACNiG1Zk3T-F0RuKCUw46XofLKw/pubchart?oid=1100024409&format=interactive
+
+**Audiencia:** La audiencia para este gráfico de barras podría incluir investigadores en inteligencia artificial y cualquier persona interesada en comprender la distribución geográfica de la investigación y el desarrollo en el campo de la inteligencia artificial en 2020.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar las contribuciones de diferentes países al campo de la inteligencia artificial en el año 2020. Esto puede ayudar a identificar los principales actores en el ámbito de la IA y comprender la distribución geográfica de la investigación y el desarrollo en esta área.
+
+**Mensaje:** El gráfico de barras muestra los países con las mayores contribuciones a la inteligencia artificial en 2020, clasificados por la cantidad de contribuciones realizadas. Cada barra representa un país y la altura de la barra indica la cantidad de contribuciones realizadas por ese país. Al observar el gráfico, se pueden identificar los principales contribuyentes a nivel mundial en el campo de la inteligencia artificial durante ese año.
+
+**Motivo elección herramienta:** Se optó por utilizar Google Sheets para crear este gráfico de barras debido a su accesibilidad y facilidad de uso. Google Sheets ofrece funciones de gráficos que permiten crear visualizaciones simples pero efectivas con datos tabulares. Además, al ser una herramienta en línea, Google Sheets facilita el acceso y la colaboración en tiempo real con otros usuarios para crear y compartir visualizaciones de datos.
 
 
 ```
