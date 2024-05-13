@@ -416,17 +416,19 @@ Fuente: DrivenData - https://www.drivendata.org/competitions/44/dengai-predictin
 
 **Día 17: networks** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day17-network/diagrama%20de%20red.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day17-network/network.png?raw=true)
 
-**Audiencia:** Esta visualización está dirigida a expertos en política internacional, analistas de seguridad, funcionarios gubernamentales y cualquier persona interesada en comprender la distribución de ojivas nucleares a nivel mundial.
+Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-intelligence-ranking-19962021?select=scimagojr+country+rank+2020.csv
 
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la distribución de ojivas nucleares por país en el año 2023, destacando los países con mayores arsenales nucleares y su impacto en la seguridad internacional.
+**Audiencia:** La audiencia para este diagrama de red podría incluir investigadores en inteligencia artificial y cualquier persona interesada en comprender las relaciones entre los países en términos de aportes a la IA.
 
-**Mensaje:** El diagrama de red presenta la cantidad total de ojivas nucleares en el nodo central, rodeado por nodos para cada país con su respectiva cantidad de ojivas nucleares en el año 2023. Los países se conectan al nodo central a través de líneas que representan la relación entre la cantidad total de ojivas y la contribución de cada país al arsenal nuclear. Se observa que algunos países tienen una gran cantidad de ojivas nucleares, lo que indica su importancia en el contexto de la disuasión nuclear y la estabilidad estratégica a nivel mundial. 
+**Objetivo:** El objetivo principal de esta representación es visualizar las relaciones entre los 5 países que realizaron más aportes a la Inteligencia Artificial en 2020. Esto puede ayudar a entender la distribución geográfica de la investigación y el desarrollo en el campo de la IA y destacar la contribución de cada país.
 
-**Motivo elección herramienta:** Se optó por utilizar un diagrama de red elaborado mediante Python (matplotlib y networkx), debido a su capacidad para mostrar relaciones complejas entre múltiples entidades de manera visual y estructurada. Esta herramienta permite representar de manera efectiva la distribución de ojivas nucleares por país y resaltar las relaciones entre la cantidad total de ojivas y la contribución de cada país al arsenal nuclear global.
+**Mensaje:** El diagrama de red muestra nodos que representan los 5 países que realizaron más aportes a la Inteligencia Artificial en 2020. Las conexiones entre los nodos pueden representar diferentes tipos de relaciones, como la colaboración en investigación, la transferencia de tecnología o la inversión conjunta en proyectos de IA. El valor total de los aportes realizados por cada país se muestra en el centro del diagrama para resaltar su importancia relativa y por cada nodo el aporte general por país.
 
-Fuente: Wikipedia - https://es.wikipedia.org/wiki/Pa%C3%ADses_con_armas_nucleares
+
+**Motivo elección herramienta:** Se optó por utilizar Python para crear este diagrama de red debido a la flexibilidad y las capacidades de las bibliotecas como NetworkX y Matplotlib. Estas bibliotecas ofrecen herramientas para crear y personalizar fácilmente diagramas de red y visualizaciones interactivas. Además, Python es ampliamente utilizado en el análisis de datos y la visualización, lo que facilita la integración de datos y la generación de gráficos.
+
 
 
 ```
