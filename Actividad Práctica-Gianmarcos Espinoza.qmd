@@ -437,17 +437,18 @@ Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-int
 **Día 18: Asian Development Bank** 
 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day18-AsianDevelopmentBank/tasa%20de%20fertilidad.png?raw=true)
-
-**Audiencia:** Esta visualización está dirigida a demógrafos, investigadores en salud reproductiva, planificadores familiares y cualquier persona interesada en comprender las tendencias de fertilidad en China y Filipinas a lo largo del tiempo.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la evolución de la tasa de fertilidad de niños por mujer en China y Filipinas desde mediados del siglo XX hasta la actualidad, resaltando las diferencias y similitudes en los patrones de fertilidad entre ambos países.
-
-**Mensaje:** El diagrama de líneas presenta la tasa de fertilidad de niños por mujer en China y Filipinas desde 1950 hasta 2020. Cada línea representa un país y muestra cómo ha variado su tasa de fertilidad a lo largo del tiempo. Se observan tendencias a lo largo de las décadas, como descensos en la tasa de fertilidad en ambos países debido a factores como la urbanización, el acceso a la educación y los servicios de salud reproductiva. Respecto a China es entendible por su política de "Hijo único" cuál afecta en la tasa de fertilidad como se aprecia. Esta representación destaca la importancia de comprender las dinámicas de fertilidad en diferentes contextos regionales para informar políticas y programas de salud reproductiva.
-
-**Motivo elección herramienta:** Se optó por utilizar un diagrama de líneas en Power BI, debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la evolución de la tasa de fertilidad entre China y Filipinas y proporciona información valiosa para comprender las dinámicas demográficas en ambos países.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day18-Asian%20Development%20Bank/expectativa%20de%20vida.png?raw=true)
 
 Fuente: Asian Development Bank https://data.adb.org/dataset/population-and-aging-asia-and-pacific
+
+**Audiencia:** La audiencia para esta gráfica de barras podría incluir cualquier persona interesada en comprender las tendencias de la expectativa de vida en diferentes países del sudeste asiático.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar la expectativa de vida futura en Indonesia, Corea y Vietnam en dos rangos de tiempo diferentes (2020-2025 y 2025-2030). Esto puede ayudar a identificar las tendencias y las diferencias en la expectativa de vida entre estos países a lo largo del tiempo.
+
+**Mensaje:** La gráfica de barras muestra barras para cada país (Indonesia, Corea y Vietnam) divididas en dos categorías: el rango de edad 2020-2025 y el rango de edad 2025-2030. Cada barra representa la expectativa de vida en ese país y en ese rango de tiempo específico. Al observar el gráfico, se pueden identificar las diferencias en la expectativa de vida entre los países y cómo se espera que evolucionen en el futuro.
+
+**Motivo elección herramienta:** Se optó por utilizar gráfico de barras en Power BI por su versatilidad y funcionalidades que provee.
+
 
 ```
 ```
@@ -456,17 +457,18 @@ Fuente: Asian Development Bank https://data.adb.org/dataset/population-and-aging
 
 **Día 19: dinosaurs** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day19-Dinosaurs/dia19.png?raw=true)
-
-**Audiencia:** Esta visualización está dirigida a entusiastas de la paleontología y cualquier persona interesada en explorar la diversidad y evolución de los dinosaurios a lo largo del período mesozoico.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de dinosaurios distintos encontrados durante el período mesozoico, abarcando los tres periodos: Triásico, Jurásico y Cretácico. El objetivo es explorar la diversidad y evolución de los dinosaurios a lo largo del tiempo geológico.
-
-**Mensaje:** El gráfico de líneas presenta la cantidad de dinosaurios distintos encontrados durante el período mesozoico. Esta representación invita a explorar la evolución y diversificación de los dinosaurios a lo largo de millones de años y subraya la importancia de los registros fósiles en nuestra comprensión del pasado.
-
-**Motivo elección herramienta:**  Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite explorar fácilmente la cantidad de dinosaurios distintos encontrados durante el período mesozoico, así como filtrar y segmentar los datos según diversos criterios, lo que facilita la exploración detallada de la diversidad de los dinosaurios a lo largo del tiempo geológico.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day19-dinosaurs/dinosaurios%20por%20dieta.png?raw=true)
 
 Fuente: Kaggle https://www.kaggle.com/datasets/kjanjua/jurassic-park-the-exhaustive-dinosaur-dataset?resource=download
+
+
+**Audiencia:** La audiencia para este gráfico de líneas podría incluir entusiastas de la paleontología, estudiantes y cualquier persona interesada en comprender la diversidad de dinosaurios a lo largo del tiempo y su relación con su dieta durante el periodo mesozoico.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar la presencia de diferentes tipos de dinosaurios según su dieta a lo largo de diferentes etapas del periodo mesozoico. Esto puede ayudar a identificar patrones y cambios en la distribución de los tipos de dinosaurios a lo largo del tiempo.
+
+**Mensaje:**  El gráfico de líneas muestra tres líneas: una línea roja para dinosaurios carnívoros, una línea verde para dinosaurios herbívoros y una línea mostaza para dinosaurios omnívoros. Cada línea representa la presencia de ese tipo de dinosaurio en diferentes etapas del periodo mesozoico, desde el Late Triassic hasta el Late Cretaceous. Al observar el gráfico, se pueden identificar tendencias en la presencia de diferentes tipos de dinosaurios a lo largo del tiempo.
+
+**Motivo elección herramienta:**  Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para generar visualizaciones de datos interactivas y dinámicas. Además, el gráfico de líneas es una opción efectiva para representar la evolución de datos a lo largo del tiempo de manera clara y comprensible.
 
 
 ```
