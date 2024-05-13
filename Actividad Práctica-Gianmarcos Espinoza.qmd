@@ -606,19 +606,19 @@ Fuente: ILOSTAT https://rshiny.ilo.org/dataexplorer5/?region=AFRICA&lang=en&id=S
 
 **Día 25: global change** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day25-global%20change/cambio%20temperatura%20mundo.png?raw=true)
-
-**Gráfica interactiva:** https://datawrapper.dwcdn.net/qWSFI/1/
-
-**Audiencia:** Esta visualización está dirigida a climatólogos y cualquier persona interesada en comprender la evolución de la temperatura media global en celsius a lo largo del tiempo.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la variación de la temperatura media del año meteorológico en el mundo durante el período de 1961 a 2022, con el fin de visualizar tendencias y cambios en el clima a escala global.
-
-**Mensaje:** El gráfico de líneas presenta la variación de la temperatura media del año meteorológico en el mundo desde 1961 hasta 2022. Cada punto en la línea representa la temperatura media global de un año en particular. Se puede observar la tendencia general de aumento de la temperatura a lo largo de las décadas, indicando el calentamiento global. Los picos y valles en la línea pueden reflejar eventos climáticos extremos o variaciones temporales en el clima. Esta representación destaca la importancia de abordar el cambio climático y sus impactos en el medio ambiente, la sociedad y la economía.
-
-**Motivo elección herramienta:** Se optó por utilizar Datawrapper para crear este gráfico de líneas debido a su facilidad de uso y capacidad para generar visualizaciones de datos de alta calidad. Datawrapper ofrece opciones de personalización que permiten resaltar las tendencias climáticas a lo largo del tiempo y proporciona una plataforma intuitiva para compartir y presentar datos climáticos de manera efectiva.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day25-global%20change/temperatura.png?raw=true)
 
 Fuente: IMF https://climatedata.imf.org/pages/climatechange-data
+
+**Gráfica interactiva:** https://docs.google.com/spreadsheets/d/e/2PACX-1vSopHVUQwXmqnw8BY5LNKazGpgQB87Z8sUdF4MACNiG1Zk3T-F0RuKCUw46XofLKw/pubchart?oid=1356976913&format=interactive
+
+**Audiencia:** ELa audiencia para este gráfico de líneas podría incluir investigadores ambientales y cualquier persona interesada en comprender la evolución de las temperaturas promedio a nivel mundial durante ese período.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y analizar el incremento o decrecimiento en la temperatura promedio mundial a lo largo de los años, desde 2001 hasta 2022. Esto puede ayudar a identificar tendencias a largo plazo en el calentamiento global y a comprender la magnitud del cambio climático durante ese período.
+
+**Mensaje:** El gráfico de líneas muestra la temperatura promedio mundial en grados Celsius para cada año, desde 2001 hasta 2022. Cada punto en la línea representa la variación de la temperatura promedio mundial para un año específico. Al observar el gráfico, se pueden identificar patrones de calentamiento o enfriamiento a lo largo del tiempo y evaluar la velocidad y la magnitud del cambio climático en ese período.
+
+**Motivo elección herramienta:** Se optó por utilizar Google Sheets para crear este gráfico de líneas debido a su accesibilidad y facilidad de uso. Google Sheets ofrece funciones de gráficos que permiten crear visualizaciones simples pero efectivas con datos tabulares. Además, al ser una herramienta en línea, Google Sheets facilita el acceso y la colaboración en tiempo real con otros usuarios para crear y compartir visualizaciones de datos.
 
 
 ```
