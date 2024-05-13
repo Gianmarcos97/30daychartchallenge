@@ -646,29 +646,18 @@ Fuente: Kaggle https://www.kaggle.com/datasets/yasirabdaali/world-artificial-int
 
 **Día 27: good/bad** 
 
-```{r, echo=FALSE}
-url <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day27-goodbad/datos_excel.csv"
-datos <- read.csv(url,sep = ",")
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day27-Good-Bad/good-bad.png?raw=true)
 
-# Graficar la distribución de las experiencias
-ggplot(datos, aes(x = Experiencia, fill = Calificacion)) +
-  geom_histogram(binwidth = 1, alpha = 0.8) +
-  labs(x = "Experiencia del Cliente", y = "Frecuencia", 
-       title = "Distribución de la Experiencia del Cliente") +
-  scale_fill_manual(values = c("Buena" = "green", "Mala" = "red")) +
-  theme_minimal()
+Fuente: Maz
 
-```
+**Audiencia:** La audiencia para este gráfico podría incluir supervisores de atención al cliente y cualquier persona interesada en monitorear la calidad del servicio al cliente en los primeros días hábiles del año 2023.
 
-**Audiencia:** La audiencia de esta visualización son los responsables de la toma de decisiones del negocio, particularmente aquellos interesados en comprender la distribución de la experiencia del cliente y su impacto en la percepción de la calidad del servicio o producto.
+**Objetivo:**  El objetivo principal de esta representación es visualizar y comparar la calificación de atención al cliente de los vendedores Maria, Pedro y Juan durante los dos primeros días hábiles del año 2023. Esto puede ayudar a identificar posibles problemas en la calidad del servicio y tomar medidas correctivas si es necesario.
 
-**Objetivo:**  Proporcionar una comprensión clara de cómo se distribuye la experiencia del cliente, identificando tanto las áreas de éxito (experiencias positivas) como las áreas de oportunidad (experiencias negativas), con el fin de facilitar la identificación de patrones o tendencias que puedan ser útiles para la toma de decisiones estratégicas orientadas a mejorar la satisfacción del cliente y la calidad del servicio o producto.
+**Mensaje:** El gráfico mostraría las calificaciones de atención al cliente para Maria, Pedro y Juan durante los dos primeros días hábiles del año 2023. Mientras que Pedro y Juan tienen una buena puntuación, Maria tiene una puntuación más baja debido a que recibió  calificaciones negativas.
 
-**Mensaje:** El mensaje principal de esta visualización es que la experiencia del cliente está distribuida de manera heterogénea, con ciertos clientes reportando experiencias positivas mientras que otros reportan experiencias negativas. La distribución de la experiencia del cliente puede proporcionar insights valiosos para mejorar la calidad del servicio o producto y aumentar la satisfacción del cliente.
+**Motivo elección herramienta:** Se realizó en Power BI por sus funcionalidades adicionales para poder hacer una mejor visualización.
 
-**Motivo elección herramienta:** Se eligió crear un histograma con barras apiladas utilizando ggplot2 en R debido a su capacidad para visualizar de manera efectiva la distribución de una variable "experiencia del cliente")" y cómo se divide esa distribución entre diferentes categorías experiencia buena vs. mala. Además, ggplot2 ofrece flexibilidad en la personalización de la apariencia de la visualización para garantizar la claridad y la legibilidad de los datos.
-
-Fuente: Maliz Store
 
 
 ```
@@ -676,17 +665,19 @@ Fuente: Maliz Store
 
 **Día 28: trend** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day28-trend/dia%2028.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day28-trend/trend.png?raw=true)
 
-**Audiencia:** Esta tabla está dirigida a entusiastas de la paleontología y cualquier persona interesada en aprender sobre los dinosaurios más peligrosos que han existido en la Tierra.
+Fuente: Minsa - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
 
-**Objetivo:** El propósito de esta tabla es proporcionar información sobre los cinco dinosaurios más peligrosos que el Tiranosaurio Rex, incluyendo su nombre, una breve descripción y una imagen representativa, con el fin de educar al público sobre la diversidad y la ferocidad de estos antiguos reptiles.
+Gráfica interactiva: https://docs.google.com/spreadsheets/d/e/2PACX-1vSopHVUQwXmqnw8BY5LNKazGpgQB87Z8sUdF4MACNiG1Zk3T-F0RuKCUw46XofLKw/pubchart?oid=1848189983&format=interactive
 
-**Mensaje:** La tabla presenta los nombres, descripciones y fotos de los cinco dinosaurios más peligrosos que el Tiranosaurio Rex. Cada entrada proporciona una breve descripción de las características distintivas y el comportamiento de cada especie, destacando su reputación como depredadores temibles durante la era de los dinosaurios. Las imágenes adjuntas ayudan a visualizar cómo se cree que lucían estos dinosaurios, lo que añade un elemento visual a la experiencia educativa. En conjunto, la tabla transmite la idea de la diversidad y la fascinante variedad de dinosaurios carnívoros que poblaron la Tierra hace millones de años.
+**Audiencia:** La audiencia para este gráfico podría incluir cualquier persona interesada en comprender la distribución de fallecimientos por COVID-19 según el género en Perú durante ese período de tiempo.
 
-**Motivo elección herramienta:** Se optó por utilizar una tabla en Power BI debido a su capacidad para organizar la información de manera clara y concisa. La tabla permite presentar los nombres, descripciones y fotos de los dinosaurios de forma ordenada y fácilmente legible, lo que facilita al público la comprensión y la absorción de la información. Además, la inclusión de imágenes en la tabla ayuda a captar la atención del espectador y a enriquecer la experiencia visual.
+**Objetivo:** El objetivo principal de esta representación es visualizar la proporción de fallecimientos por COVID-19 en Perú según el género durante el período de marzo de 2020 a marzo de 2024. Esto puede ayudar a identificar si existe alguna disparidad de género en la mortalidad por COVID-19 y entender mejor cómo ha evolucionado esta situación a lo largo del tiempo.
 
-Fuente: Univision https://www.univision.com/explora/7-dinosaurios-mas-poderosos-que-el-t-rex-quien-era-el-verdadero-rey-de-la-prehistoria
+**Mensaje:** El gráfico circular mostraría la distribución porcentual de fallecimientos por COVID-19 en Perú según el género, con dos secciones: una para hombres y otra para mujeres. Cada sección del gráfico representaría el porcentaje de fallecimientos atribuidos a ese género en el período de tiempo especificado.
+
+**Motivo elección herramienta:** Se optó por utilizar Google Sheets para crear este gráfico circular debido a su accesibilidad y facilidad de uso. Google Sheets ofrece funciones de gráficos que permiten crear visualizaciones simples pero efectivas con datos tabulares. Además, al ser una herramienta en línea, Google Sheets facilita el acceso y la colaboración en tiempo real con otros usuarios para crear y compartir visualizaciones de datos.
 
 ```
 ```
@@ -694,29 +685,28 @@ Fuente: Univision https://www.univision.com/explora/7-dinosaurios-mas-poderosos-
 **Día 29: black'n'white** 
 
 ```{r, echo=FALSE}
-url <- "https://raw.githubusercontent.com/SergioGerman412/30DayChartChallenge/main/Day27-goodbad/datos_excel.csv"
-datos <- read.csv(url, sep = ",")
+url2 <- "https://raw.githubusercontent.com/Gianmarcos97/30daychartchallenge/main/Day11-mobile-friendly/data.csv"
+datos3 <- read.csv(url2,sep = ",")
+datos3 <- unique(datos3)
+datos3$Price.... <-  as.integer(gsub("[\\$|,]", "", datos3$Price....)) 
+datos3 <- datos3[!is.na(datos3$Price....), ]
 
-# Graficar la distribución de las experiencias
-ggplot(datos, aes(x = Experiencia, fill = Calificacion)) +
-  geom_histogram(binwidth = 1, alpha = 0.8) +
-  labs(x = "Experiencia del Cliente", y = "Frecuencia", 
-       title = "Distribución de la Experiencia del Cliente") +
-  scale_fill_manual(values = c("Buena" = "white", "Mala" = "black")) +
-  theme_minimal() + 
-  theme(panel.background = element_rect(fill = "gray50"))  
+hist(datos3$Price...., 
+     main = "Histograma de Precio de celulares en dólar - 2023", 
+     xlab = "Precio", 
+     ylab = "Frecuencia", 
+     col = "black")
 ```
 
-**Audiencia:** La audiencia de esta visualización son los responsables de la toma de decisiones del negocio, particularmente aquellos interesados en comprender la distribución de la experiencia del cliente y su impacto en la percepción de la calidad del servicio o producto.
+Fuente: Kaggle  https://www.kaggle.com/datasets/rkiattisak/mobile-phone-price/data
 
-**Objetivo:**  Proporcionar una comprensión clara de cómo se distribuye la experiencia del cliente, identificando tanto las áreas de éxito (experiencias positivas) como las áreas de oportunidad (experiencias negativas), con el fin de facilitar la identificación de patrones o tendencias que puedan ser útiles para la toma de decisiones estratégicas orientadas a mejorar la satisfacción del cliente y la calidad del servicio o producto.
+**Audiencia:**   Este histograma está dirigido a consumidores interesados en conocer el costo de los teléfonos celulares en el año 2023, así como a analistas de mercado y cualquier persona que desee comprender la distribución de precios de los celulares en el mercado.
 
-**Mensaje:** El mensaje principal de esta visualización es que la experiencia del cliente está distribuida de manera heterogénea, con ciertos clientes reportando experiencias positivas mientras que otros reportan experiencias negativas. La distribución de la experiencia del cliente puede proporcionar insights valiosos para mejorar la calidad del servicio o producto y aumentar la satisfacción del cliente.
+**Objetivo:**  El objetivo primordial de esta representación es visualizar la distribución de precios de los teléfonos celulares en dólares en el año 2023. Esto permite identificar patrones, como la concentración de precios en ciertos rangos o la presencia de valores atípicos, y ayuda a tomar decisiones informadas sobre la compra de un celular.
 
-**Motivo elección herramienta:** Se eligió crear un histograma con barras apiladas utilizando ggplot2 en R debido a su capacidad para visualizar de manera efectiva la distribución de una variable "experiencia del cliente")" y cómo se divide esa distribución entre diferentes categorías experiencia buena vs. mala. Además, ggplot2 ofrece flexibilidad en la personalización de la apariencia de la visualización para garantizar la claridad y la legibilidad de los datos.
+**Mensaje:**  El histograma presenta la distribución de precios de los teléfonos celulares en dólares en el año 2023. Cada barra representa un rango de precios, y la altura de la barra indica la frecuencia con la que se encuentran celulares dentro de ese rango de precios. Al observar el histograma, se pueden identificar fácilmente los rangos de precios más comunes y obtener una idea de la dispersión de precios en el mercado.
 
-
-Fuente: Maliz Store 
+**Motivo elección herramienta:** Se decidió utilizar R para crear este histograma debido a su capacidad para generar visualizaciones de datos de manera eficiente y profesional. R ofrece una amplia variedad de paquetes y funciones específicamente diseñados para la visualización de datos, lo que permite crear gráficos personalizados y de alta calidad. En particular, la función hist() en R es muy útil para crear histogramas con facilidad y personalizarlos según las necesidades del usuario. Además, la elección de blanco y negro para la representación ayuda a mantener la claridad y legibilidad de la visualización sin distracciones cromáticas.
 
 ```
 ```
@@ -724,17 +714,19 @@ Fuente: Maliz Store
 **Día 30: FiveThirtyEight** 
 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day30-FiveThiryEight/día30.png?raw=true)
-
-**Audiencia:** Esta visualización está dirigida a  cualquier persona interesada en comprender la percepción pública sobre el desempeño de Donald Trump como presidente de Estados Unidos.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la tendencia de la aprobación y desaprobación de Donald Trump por parte de los estadounidenses a lo largo de un período de tiempo determinado, con el fin de analizar la evolución de la opinión pública sobre su presidencia.
-
-**Mensaje:** El gráfico de líneas presenta dos líneas: una que representa la cantidad de aprobación y otra que representa la cantidad de desaprobación de Donald Trump como presidente de Estados Unidos. Esta representación permite una visualización clara de la dinámica de la opinión pública sobre la presidencia de Trump y puede proporcionar información valiosa para comprender su impacto político.
-
-**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente la tendencia de la aprobación y desaprobación de Donald Trump a lo largo del tiempo, así como realizar análisis más detallados mediante filtros y segmentaciones de datos.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day30-FiveThiryEight/Mike%20Pence%20encuesta%20de%20aprobaci%C3%B3n.png?raw=true)
 
 Fuente: FiveThiryEight https://projects.fivethirtyeight.com/polls/favorability/joe-biden/
+
+**Audiencia:** La audiencia para este gráfico de líneas podría incluir analistas políticos, encuestadores, ciudadanos estadounidenses interesados en la política y cualquier persona que esté siguiendo la carrera política de Mike Pence.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar las opiniones de los estadounidenses sobre Mike Pence a lo largo del tiempo, desde 2020 hasta 2023. Esto puede ayudar a identificar tendencias en la percepción pública de Mike Pence y a comprender cómo ha evolucionado su imagen durante ese período.
+
+**Mensaje:** El gráfico de líneas mostraría dos líneas: una línea azul representando el porcentaje de encuestados a favor de Mike Pence y una línea roja representando el porcentaje de encuestados en contra de Mike Pence. Cada punto en las líneas correspondería a los datos de la encuesta para cada año seleccionado (2020, 2021, 2022 y 2023). Al observar el gráfico, se pueden identificar cambios en la opinión pública sobre Mike Pence a lo largo del tiempo y evaluar si ha ganado o perdido popularidad.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para generar visualizaciones interactivas y dinámicas. 
+
+
 
 
 
