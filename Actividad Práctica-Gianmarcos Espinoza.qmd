@@ -17,6 +17,7 @@ if(!require("treemapify")) install.packages("treemapify")
 if(!require("dplyr")) install.packages("dplyr")
 if(!require("corrplot")) install.packages("corrplot")
 if(!require("readxl")) install.packages("readxl")
+if(!require("lubridate")) install.packages("lubridate")
 
 # paquetes
 library(readr)
@@ -25,6 +26,7 @@ library(treemapify)
 library(dplyr)
 library(corrplot)
 library(readxl)
+library(lubridate)
 
 ```
 
@@ -476,18 +478,53 @@ Fuente: Kaggle https://www.kaggle.com/datasets/kjanjua/jurassic-park-the-exhaust
 
 **Día 20: correlation** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day20-correlation/correlación%20entre%20variables.png?raw=true)
+```{r, echo=FALSE}
+url <- "https://raw.githubusercontent.com/Gianmarcos97/30daychartchallenge/main/Day20-correlation/ventas_juguetes.csv"
+
+# Leer el archivo CSV desde la URL
+ventas <- read_csv(url, show_col_types = FALSE)
+
+# Convertir la columna 'Fecha' a formato de fecha
+ventas$Fecha <- as.Date(ventas$Fecha)
 
 
-**Audiencia:** Esta visualización está dirigida a los analistas de la empresa y personas interesadas en comprender la relación entre las ventas y el gasto en publicidad.
+# Agrupar los datos por semana y calcular la media de las ventas
+ventas_semana <- ventas %>%
+  mutate(Semana = floor_date(Fecha, "week")) %>%
+  group_by(Semana) %>%
+  summarise(Barbie = mean(Barbie),
+            LEGO = mean(LEGO))
 
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la correlación entre las ventas y el gasto en publicidad a lo largo del tiempo, con el fin de identificar patrones y tendencias que puedan ayudar a optimizar las estrategias de marketing y mejorar el rendimiento empresarial.
+# Filtrar para incluir solo las últimas 4 semanas
+ventas_semana <- ventas_semana %>%
+  filter(Semana >= tail(unique(Semana), 4)[1])
 
-**Mensaje:** El gráfico de líneas presenta la evolución de las ventas (en azul) y el gasto en publicidad (en rojo) a lo largo de los años. Cada línea muestra cómo han variado las ventas y el gasto en publicidad en función del año. Se observa una correlación positiva entre las dos variables, ya que el aumento en el gasto en publicidad tiende a estar asociado con un aumento en las ventas en períodos posteriores. El coeficiente de correlación de 0.47 indica una correlación moderada entre las dos variables, lo que sugiere que el gasto en publicidad contribuye positivamente al aumento de las ventas, aunque también pueden influir otros factores. 
+# Calcular la correlación entre las ventas de Barbie y LEGO
+correlacion <- cor(ventas_semana$Barbie, ventas_semana$LEGO)
 
-**Motivo elección herramienta:** Se optó por utilizar un gráfico de líneas en R (ggplot2) debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. La elección de colores distintivos para representar las ventas y el gasto en publicidad ayuda a visualizar la relación entre las dos variables de manera efectiva. 
+# Crear la gráfica de líneas
+ggplot(ventas_semana, aes(x = Semana)) +
+  geom_line(aes(y = Barbie, color = "Muñecas Barbie")) +
+  geom_line(aes(y = LEGO, color = "Sets de Construcción LEGO")) +
+  labs(title = paste("Correlación de Ventas Semanales de Juguetes en enero 2023 \nCorrelación:", round(correlacion, 2)),
+       x = "Semana",
+       y = "Ventas",
+       color = "Producto") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
 
-Fuente: Maliz Store
+```
+
+Fuente: Toy store
+
+**Audiencia:** La audiencia para este gráfico de líneas podría incluir analistas de mercado de la empresa que busquen comprender las tendencias de ventas de juguetes durante el mes de enero de 2023.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar la correlación entre las ventas semanales de dos tipos de juguetes, sets de construcción Lego y muñecas Barbie, durante el mes de enero de 2023. Esto puede ayudar a identificar patrones de comportamiento de compra y entender cómo se relacionan las ventas de estos productos entre sí, productos de Toy Store con sus 2 productos líderes en ventas.
+
+**Mensaje:** El gráfico de líneas muestra dos líneas: una línea en color celeste para representar las ventas semanales de sets de construcción Lego y otra línea en color rojo para representar las ventas semanales de muñecas Barbie. La correlación de -0.96 entre las dos series de ventas indica una fuerte relación inversa: cuando las ventas de Lego aumentan, las ventas de Barbie tienden a disminuir y viceversa. Este hallazgo puede ser útil para tomar decisiones estratégicas en términos de inventario y marketing.
+
+**Motivo elección herramienta:** Se optó por utilizar R para crear este gráfico de líneas debido a su versatilidad y capacidad para generar visualizaciones de datos de alta calidad. R ofrece numerosas bibliotecas, como ggplot2, que permiten crear gráficos personalizados y estéticamente agradables. Además, R es una herramienta comúnmente utilizada en análisis de datos y estadísticas, lo que facilita el cálculo de la correlación entre las series de datos de ventas.
+
 
 ```
 ```
