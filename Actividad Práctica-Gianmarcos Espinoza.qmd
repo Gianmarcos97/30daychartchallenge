@@ -531,18 +531,17 @@ Fuente: Toy store
 
 **Día 21: green energy** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day21-GreenEnergy/dia%2021.png?raw=true)
-
-
-**Audiencia:** Esta visualización está dirigida a ciudadanos preocupados por el medio ambiente y cualquier persona interesada en comprender la evolución de las fuentes de generación de electricidad en Perú a lo largo del tiempo.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa cómo ha evolucionado la contribución de diferentes fuentes de generación de electricidad en Perú durante las últimas dos décadas, destacando el cambio hacia fuentes de energía más limpias y sostenibles.
-
-**Mensaje:** El gráfico de líneas presenta tres fuentes de generación de electricidad en Perú desde el año 2000 hasta el 2020: nuclear, energía renovable y combustibles fósiles. Cada línea muestra cómo ha variado la contribución de cada fuente en el tiempo. Se observa un aumento gradual en la generación de electricidad a partir de fuentes renovables. Sin embargo, se evidencia que en Perú no hay presencia de energía nuclear. 
-
-**Motivo elección herramienta:** Se optó por utilizar un gráfico de líneas en Power BI debido a su capacidad para mostrar tendencias y cambios a lo largo del tiempo de manera clara y concisa. Esta herramienta permite comparar fácilmente la evolución de las diferentes fuentes de generación de electricidad en Perú y proporciona información valiosa para comprender las dinámicas del sector energético en el país.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day21-GreenEnergy/electricidad%20en%20suiza.png?raw=true)
 
 Fuente: Kaggle https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy
+
+**Audiencia:** La audiencia para esta gráfica de líneas podría incluir analistas de energía y cualquier persona interesada en comprender la evolución de las fuentes de generación de electricidad en Suiza.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar la contribución de diferentes fuentes de generación de electricidad en Suiza a lo largo del tiempo, desde 2000 hasta 2020. Esto puede ayudar a comprender cómo ha evolucionado el mix energético del país y cómo se han desarrollado las energías renovables en comparación con las fuentes tradicionales.
+
+**Mensaje:** El gráfico de líneas muestra tres líneas: una línea azul para representar la energía generada a partir de fuentes renovables, una línea celeste para representar la energía nuclear y una línea naranja para representar la energía generada a partir de combustibles fósiles. Al observar el gráfico, se puede analizar la tendencia de cada tipo de fuente de generación de electricidad a lo largo de las dos décadas, lo que puede proporcionar información sobre la política energética, la sostenibilidad y la seguridad energética del país.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear esta gráfica de líneas debido a su capacidad para generar visualizaciones interactivas y dinámicas. 
 
 ```
 ```
