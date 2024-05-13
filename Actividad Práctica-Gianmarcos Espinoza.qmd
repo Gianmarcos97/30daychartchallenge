@@ -548,36 +548,37 @@ Fuente: Kaggle https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustain
 
 **Día 22: mobility** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day22-mobility/turistas.png?raw=true)
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day22-mobility/Uber.png?raw=true)
 
+Fuente: Kaggle https://www.kaggle.com/datasets/marcusrb/uber-peru-dataset
 
-**Audiencia:** Esta visualización está dirigida a cualquier persona interesada en comprender las tendencias de viaje en España y sus motivaciones.
+**Audiencia:** La audiencia para esta gráfica de líneas podría incluir analistas de transporte y cualquier persona interesada en comprender el uso de servicios de transporte como Uber en Perú durante el año 2010.
 
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa la cantidad de turistas que visitan España por motivo de viaje, ya sea por trabajo o por vacaciones, durante el período de 2017 a 2021, con el fin de identificar patrones y tendencias en el comportamiento del turismo.
+**Objetivo:** El objetivo principal de esta representación es visualizar y analizar la cantidad total de distancia recorrida en Uber por kilómetro en Perú durante cada uno de los 12 meses del año 2010. Esto puede proporcionar información sobre los patrones de uso de Uber a lo largo del año y ayudar a identificar tendencias estacionales u otras variaciones.
 
-**Mensaje:** El gráfico de líneas presenta la cantidad de turistas que visitan España por motivo de viaje, diferenciando entre aquellos que viajan por trabajo (línea azul) y aquellos que viajan por vacaciones (línea roja) desde 2017 hasta 2021. Cada línea muestra cómo ha variado la cantidad de turistas en función del año y el motivo de su viaje. Se observa que la cantidad de turistas por vacaciones tiende a ser mayor que la cantidad de turistas por trabajo en la mayoría de los años, lo que refleja la importancia del turismo de ocio en España. Sin embargo, comparando el año 2019 al 2020, se evidencia una disminución considerable en turistas, y es entendible porque fue en época de pandemia covid-19.
+**Mensaje:** El gráfico de líneas muestra la cantidad total de distancia recorrida en Uber por kilómetro en Perú durante cada mes del año 2010. Cada punto en la línea representa la suma total de kilómetros recorridos en Uber para ese mes en particular. Al observar el gráfico, se puede analizar la tendencia general de la distancia recorrida a lo largo del año y cualquier variación notable entre los diferentes meses.
 
-**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente las tendencias de viaje a lo largo del tiempo y proporciona herramientas para filtrar y segmentar los datos según diversos criterios, lo que facilita la identificación de patrones y la toma de decisiones informadas en el sector turístico.
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear esta gráfica de líneas debido a su capacidad para generar visualizaciones interactivas y dinámicas.
 
-Fuente: ine https://www.ine.es/jaxiT3/Tabla.htm?t=13864
 
 ```
 ```
 
 **Día 23: tiles** 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day23-tiles/electricidad%20renovable.png?raw=true)
-
-
-**Audiencia:** Esta visualización está dirigida a ciudadanos preocupados por el medio ambiente y cualquier persona interesada en comprender la evolución de la fuente de generación de electricidad renovable en Perú a lo largo del tiempo.
-
-**Objetivo:**El propósito de esta representación visual es mostrar de manera clara y concisa la contribución de la generación de electricidad renovable en Perú en términos de teravatios-hora (TWh) durante el período de 2010 a 2020, destacando las tendencias y el crecimiento en el uso de energías limpias en el país.
-
-**Mensaje:** El gráfico treemap presenta la generación de electricidad renovable en Perú en TWh desde 2010 hasta 2020. Cada cuadrícula representa un año y su tamaño corresponde a la cantidad de electricidad generada en ese año. Se observa un posible crecimiento en la generación de electricidad renovable a lo largo de los años, lo que indica un movimiento hacia una matriz energética más sostenible en el país. Esta representación destaca el compromiso de Perú con la producción de energía limpia y su contribución a la mitigación del cambio climático.
-
-**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico treemap debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente la generación de electricidad renovable en Perú a lo largo del tiempo, facilitando la identificación de patrones y tendencias en el uso de energías limpias en el país.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day23-tiles/electricidad%20nuclear%20en%20suiza.png?raw=true)
 
 Fuente: Kaggle https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy
+
+**Audiencia:** La audiencia para este treemap podría incluir analistas de energía y cualquier persona interesada en comprender la contribución de la energía nuclear en el suministro eléctrico de Suiza durante ese período.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar la generación de electricidad nuclear en Suiza durante los años 2005 al 2020, representada por áreas proporcionales en un treemap. Esto puede ayudar a comprender cómo ha variado la producción de energía nuclear a lo largo del tiempo y a identificar los años con mayor y menor contribución de esta fuente de energía.
+
+**Mensaje:** El treemap muestra una serie de cuadros, cada uno representando un año (de 2005 a 2020) y su respectiva contribución a la generación de electricidad nuclear en Suiza, medida en ptw (por ejemplo, petavatios-hora). Los cuadros están organizados en función de su tamaño relativo, lo que permite comparar visualmente la contribución de cada año y identificar rápidamente los años con mayor y menor producción de energía nuclear.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este treemap debido a su capacidad para generar visualizaciones interactivas y dinámicas. 
+
+
 
 
 ```
