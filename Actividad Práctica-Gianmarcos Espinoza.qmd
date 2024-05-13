@@ -579,26 +579,23 @@ Fuente: Kaggle https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustain
 **Motivo elección herramienta:** Se optó por utilizar Power BI para crear este treemap debido a su capacidad para generar visualizaciones interactivas y dinámicas. 
 
 
-
-
 ```
 ```
 
 **Día 24: ILO Region for Africa** 
 
 
-![](https://github.com/SergioGerman412/30DayChartChallenge/blob/main/Day24-ILO%20Region%20for%20Africa/ratio%20desempleo.png?raw=true)
-
-
-**Audiencia:** Esta visualización está dirigida a responsables de políticas de empleo y cualquier persona interesada en comprender las disparidades de género en el desempleo en África durante el período de 2014 a 2024.
-
-**Objetivo:** El propósito de esta representación visual es mostrar de manera clara y concisa el ratio de desempleo en África desglosado por género, diferenciando entre el desempleo masculino y femenino, durante el período de 2014 a 2024, con el fin de identificar posibles disparidades y tendencias en el mercado laboral africano.
-
-**Mensaje:** El gráfico de columnas agrupadas presenta el ratio de desempleo en África por género desde 2014 hasta 2024. Cada año tiene dos barras agrupadas: una barra azul que representa el desempleo masculino y una barra rosada que representa el desempleo femenino. El eje "y" muestra el porcentaje de desempleo. Se observa la evolución del desempleo en ambos géneros a lo largo de los años y se pueden identificar posibles diferencias minimas en las tasas de desempleo entre hombres y mujeres.
-
-**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de columnas agrupadas debido a su capacidad para visualizar datos de manera interactiva y dinámica. Power BI permite analizar fácilmente el ratio de desempleo por género en África a lo largo del tiempo, facilitando la identificación de tendencias y disparidades en el mercado laboral.
+![](https://github.com/Gianmarcos97/30daychartchallenge/blob/main/Day24-ILO%20Region%20for%20Africa/uganda.png?raw=true)
 
 Fuente: ILOSTAT https://rshiny.ilo.org/dataexplorer5/?region=AFRICA&lang=en&id=SDG_0861_SEX_RT_A
+
+**Audiencia:** La audiencia para este gráfico de líneas podría incluir economistas, investigadores sociales y cualquier persona interesada en comprender las disparidades salariales de género en Uganda a lo largo del tiempo.
+
+**Objetivo:** El objetivo principal de esta representación es visualizar y comparar las ganancias por hora entre hombres y mujeres en Uganda durante los años 2014, 2017, 2019 y 2021. Esto puede ayudar a identificar tendencias en las disparidades salariales de género y a evaluar la efectividad de políticas y programas dirigidos a cerrar esta brecha.
+
+**Mensaje:** El gráfico de líneas muestra dos líneas: una línea rosa para representar las ganancias por hora de las mujeres y una línea azul para representar las ganancias por hora de los hombres. Cada punto en las líneas corresponde a los datos de ganancias por hora para cada año seleccionado (2014, 2017, 2019 y 2021). Al observar el gráfico, se pueden analizar las diferencias en las ganancias por hora entre hombres y mujeres a lo largo del tiempo.
+
+**Motivo elección herramienta:** Se optó por utilizar Power BI para crear este gráfico de líneas debido a su capacidad para generar visualizaciones interactivas y dinámicas. 
 
 
 ```
